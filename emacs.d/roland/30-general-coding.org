@@ -1,0 +1,17 @@
+* General coding stuff
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package flycheck
+  :init (global-flycheck-mode)
+)
+
+(use-package company)
+
+(use-package protobuf-mode)
+(use-package json-mode)
+(use-package yaml-mode)
+(use-package markdown-mode)
+(use-package markdown-toc)
+
+#+END_SRC

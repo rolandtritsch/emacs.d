@@ -1,0 +1,13 @@
+* Install/configure magit
+
+Make git work.
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package magit
+  :custom
+  (magit-wip-mode t)
+  (magit-no-confirm (quote (safe-with-wip)))
+)
+
+#+END_SRC

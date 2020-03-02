@@ -1,0 +1,37 @@
+* Install/configure org-mode
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package org
+  :config
+  (setq org-directory "~/Dropbox/Notes")
+  (setq org-default-notes-file (concat org-directory "/2020-Work.org"))
+  (setq org-capture-templates '(
+    ("w" "Work" entry (file+headline "~/Dropbox/Notes/2020-Work.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
+    ("h" "Home" entry (file+headline "~/Dropbox/Notes/2020-Home.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
+  ))
+  (setq org-todo-keywords '(
+    (sequence "TODO(t)" "WIP(w)" "SUSPENDED(s)" "|" "HIBERNATED(h)" "DONE(d)")
+  ))
+  (setq org-todo-keyword-faces '(
+    ("TODO" . "red") ("WIP" . "orange") ("SUSPENDED" . "yellow") ("HIBERNATED" . "blue") ("DONE" . "green")
+  ))
+  (setq org-lowest-priority ?D)
+  (setq org-default-priority ?D)
+  :custom
+  (org-agenda-files "~/Dropbox/Notes/2020.agenda_files")
+)
+
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+)
+
+(global-set-key (kbd "\C-c l") 'org-store-link)
+(global-set-key (kbd "\C-c a") 'org-agenda)
+(global-set-key (kbd "\C-c c") 'org-capture)
+(global-set-key (kbd "\C-c b") 'org-switchb)
+
+(org-reload)
+
+#+END_SRC

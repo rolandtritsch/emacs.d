@@ -1,0 +1,7 @@
+* Install/configure the haskell support
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package intero)
+
+#+END_SRC

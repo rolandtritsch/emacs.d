@@ -1,0 +1,7 @@
+* Install/configure elisp support
+
+Nothing here yet.
+
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC

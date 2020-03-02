@@ -1,0 +1,27 @@
+* Basic packages
+
+Small packages to customize emacs itself.
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package disable-mouse)
+(global-disable-mouse-mode)
+
+(use-package which-key
+  :config
+  (which-key-mode)
+)
+
+(use-package ace-window
+  :config
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+      '(aw-leading-char-face
+        ((t (:inherit ace-jump-face-foreground :height 2.0)))
+      )
+    )
+  )
+)
+
+#+END_SRC

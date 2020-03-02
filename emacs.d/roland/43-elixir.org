@@ -1,0 +1,24 @@
+* Install/configure the elixir support
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package alchemist
+  :config
+  (add-to-list 'elixir-mode-hook 'alchemist-mode)
+  :custom
+  (alchemist-goto-elixir-source-dir (expand-file-name "~/Development/Clone/elixir"))
+  (alchemist-hooks-test-on-save t)
+  (alchemist-mix-test-default-options (quote ("--only focus")))
+  (alchemist-test-display-compilation-output t)
+)
+
+(use-package company
+  :config
+  (add-to-list 'alchemist-mode-hook 'company-mode)
+)
+
+(add-hook 'elixir-mode-hook
+  (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
+)
+
+#+END_SRC
