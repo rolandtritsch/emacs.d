@@ -1,0 +1,297 @@
+* Roland's Emacs config
+
+Not a lot is happening here.
+
+Just loading a bunch of other org-files.
+
+* Basic
+
+#+BEGIN_SRC emacs-lisp
+
+;;; package --- My init file
+;;; Commentary:
+
+;;; Code:
+
+;; from http://ensime.github.io/editors/emacs/learning
+;; and https://cestlaz.github.io/posts/using-emacs-1-setup
+
+;; global variables
+(setq
+  inhibit-startup-screen t
+  create-lockfiles nil
+
+  line-number-mode t
+  column-number-mode t
+
+  scroll-error-top-bottom t
+  show-paren-delay 0.5
+  sentence-end-double-space nil
+)
+
+;; buffer local variables
+(setq-default
+  indent-tabs-mode nil
+  tab-width 2
+  c-basic-offset 2
+)
+
+;; modes
+(electric-indent-mode 0)
+
+;; global keybindings
+(global-unset-key (kbd "C-z"))
+
+;; the package manager
+(require 'package)
+(setq
+  package-archives '(
+    ("gnu" . "http://elpa.gnu.org/packages/")
+    ("org" . "http://orgmode.org/elpa/")
+    ("melpa" . "http://melpa.org/packages/")
+    ("melpa-stable" . "http://stable.melpa.org/packages/")
+  )
+  ;;package-archive-priorities '(("melpa-stable" . 1))
+  package-archive-priorities '(("melpa" . 1))
+)
+
+(package-initialize)
+
+;; install/configure use-package
+(when
+  (not package-archive-contents)
+  (package-refresh-contents)
+  (package-install 'use-package)
+)
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; Always ask y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Make dired reuse the current buffer
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; Remove unnecessary gui stuff
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+;; get rid of trailing whitespaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; configure the saves to go into one place
+(setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
+(setq backup-by-copying t)
+(setq
+  delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t
+)
+
+;; enable which-key
+(use-package which-key
+  :config
+  (which-key-mode)
+)
+
+;; disable the mouse
+(use-package disable-mouse)
+(global-disable-mouse-mode)
+
+;; setup/configure ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(defun ido-smart-select-text ()
+  "Select the current completed item.  Do NOT descend into directories."
+  (interactive)
+  (when (and (or (not ido-require-match)
+                 (if (memq ido-require-match '(confirm confirm-after-completion))
+                     (if (or (eq ido-cur-item 'dir)
+                             (eq last-command this-command))
+                         t
+                       (setq ido-show-confirm-message t)
+                       nil))
+                 (ido-existing-item-p))
+             (not ido-incomplete-regexp))
+    (when ido-current-directory
+      (setq ido-exit 'takeprompt)
+      (unless (and ido-text (= 0 (length ido-text)))
+        (let ((match (ido-name (car ido-matches))))
+          (throw 'ido
+                 (setq ido-selected
+                       (if match
+                           (replace-regexp-in-string "/\\'" "" match)
+                         ido-text)
+                       ido-text ido-selected
+                       ido-final-text ido-text)))))
+    (exit-minibuffer)))
+
+(eval-after-load "ido"
+  '(define-key ido-common-completion-map "\C-m" 'ido-smart-select-text)
+)
+
+;; use ibuffer (instead of list-buffer)
+(defalias 'list-buffers 'ibuffer)
+;;(defalias 'list-buffers 'ibuffer-other-window)
+
+;; install/configure ace-window
+(use-package ace-window
+  :config
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+      '(aw-leading-char-face
+        ((t (:inherit ace-jump-face-foreground :height 2.0)))
+      )
+    )
+  )
+)
+
+;; ---
+
+;; install/configure magit
+
+(use-package magit
+  :custom
+  (magit-wip-mode t)
+  (magit-no-confirm (quote (safe-with-wip)))
+)
+
+;; ---
+
+;; configure lsp-mode/metals
+
+;; Enable scala-mode and sbt-mode
+(use-package scala-mode :mode "\\.s\\(cala\\|bt\\)$")
+
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+    'minibuffer-complete-word
+    'self-insert-command
+    minibuffer-local-completion-map
+  )
+  ;; sbt-supershell kills sbt-mode:  https://github.com/hvesalai/emacs-sbt-mode/issues/152
+  (setq sbt:program-options '("-Dsbt.supershell=false"))
+)
+
+(use-package flycheck
+  :init (global-flycheck-mode)
+)
+
+(use-package lsp-mode
+  ;; Optional - enable lsp-mode automatically in scala files
+  :hook (scala-mode . lsp)
+  :config (setq lsp-prefer-flymake nil)
+)
+
+(setq lsp-keymap-prefix "C-c C-l")
+
+(use-package lsp-ui)
+
+(use-package company-lsp)
+
+;; ---
+
+;; install/configure haskell/intero
+(use-package intero)
+
+;; ---
+
+;; install/configure elixir/alchemist
+(use-package alchemist
+  :config
+  (add-to-list 'elixir-mode-hook 'alchemist-mode)
+)
+(use-package company
+  :config
+  (add-to-list 'alchemist-mode-hook 'company-mode)
+)
+(add-hook 'elixir-mode-hook
+  (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
+)
+
+;; ---
+
+;; install/configure plantuml-mode
+(use-package plantuml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+)
+
+(use-package flycheck-plantuml
+  :config
+  (flycheck-plantuml-setup)
+)
+
+;; ---
+
+;; install/configure org mode
+(global-set-key (kbd "\C-c l") 'org-store-link)
+(global-set-key (kbd "\C-c a") 'org-agenda)
+(global-set-key (kbd "\C-c c") 'org-capture)
+(global-set-key (kbd "\C-c b") 'org-switchb)
+
+(use-package org
+  :config
+  (setq org-directory "~/Dropbox/Notes")
+  (setq org-default-notes-file (concat org-directory "/2020.org"))
+  (setq org-capture-templates '(
+    ("t" "Todo" entry (file+headline org-default-notes-file "Tasks") "* TODO %?\n SCHEDULED: %t\n")
+  ))
+  (setq org-todo-keywords '(
+    (sequence "TODO(t)" "WIP(w)" "SUSPENDED(s)" "|" "HIBERNATED(h)" "DONE(d)")
+  ))
+  (setq org-todo-keyword-faces '(
+    ("TODO" . "red") ("WIP" . "orange") ("SUSPENDED" . "yellow") ("HIBERNATED" . "blue") ("DONE" . "green")
+  ))
+  (setq org-lowest-priority ?D)
+  (setq org-default-priority ?D)
+  :custom
+  (org-agenda-files (quote ("~/Dropbox/Notes/2020.org")))
+)
+
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+)
+
+;; ---
+
+(provide 'init)
+
+;;; init.el ends here
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(alchemist-goto-elixir-source-dir "/home/roland/Development/Clone/elixir")
+ '(alchemist-hooks-test-on-save t)
+ '(alchemist-mix-test-default-options (quote ("--only focus")))
+ '(alchemist-test-display-compilation-output t)
+ '(lsp-enable-snippet nil)
+ '(magit-no-confirm (quote (safe-with-wip)))
+ '(package-selected-packages
+   (quote
+    (magit org-bullets org json-mode disable-mouse protobuf-mode flycheck-plantuml plantuml-mode yaml-mode company-terraform terraform-mode markdownfmt ob-mermaid elixir-mode elixir-yasnippets flycheck flycheck-elixir flycheck-mix lsp-elixir company company-erlang ac-alchemist alchemist markdown-mode markdown-mode+ markdown-preview-eww markdown-preview-mode markdown-toc lua-mode intero use-package)))
+ '(plantuml-jar-path "/home/roland/.local/jars/plantuml.jar"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 132 :width normal :foundry "DAMA" :family "Ubuntu Mono"))))
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 2.0))))
+ '(region ((t (:background "orange" :distant-foreground "gtk_selection_fg_color")))))
+
+#+END_SRC

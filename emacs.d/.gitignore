@@ -1,0 +1,10 @@
+elpa/
+session.*
+auto-save-list/
+bookmarks/
+transient/
+roland/*.el
+
+ido.last
+.lsp-session-v1
+org-clock-save.el

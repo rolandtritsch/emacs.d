@@ -1,0 +1,7 @@
+* Roland's Emacs config
+
+Documenting my emacs config.
+
+Standing on the shoulder of giants. Heavily inspired by [[https://cestlaz.github.io/posts/using-emacs-1-setup][Mike]].
+
+Look at *init.el* and the corresponding *org* file.
