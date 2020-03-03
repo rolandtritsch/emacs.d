@@ -1,7 +1,7 @@
 elpa/
 session.*
 auto-save-list/
-bookmarks/
+bookmarks
 transient/
 roland/*.el
 
