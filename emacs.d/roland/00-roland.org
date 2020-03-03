@@ -40,5 +40,6 @@ Just loading a bunch of other org-files.
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/41-haskell.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/42-scala.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/43-elixir.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/roland/44-go.org"))
 
 #+END_SRC

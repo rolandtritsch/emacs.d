@@ -1,0 +1,7 @@
+* Install/configure support for Go
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package go-mode)
+
+#+END_SRC
