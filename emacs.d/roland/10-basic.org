@@ -4,6 +4,10 @@ This is the stuff that is =package-independent=. Basically configuring emacs its
 
 Get rid of =screen clutter= (bar-mode, ...).
 
+Do backup files, but keep them out of the way.
+
+Switch on winner-mode (to go back (and forth) through the window layout history).
+
 #+BEGIN_SRC emacs-lisp
 
 (setq inhibit-startup-screen t)
@@ -34,5 +38,7 @@ Get rid of =screen clutter= (bar-mode, ...).
 
 (defalias 'list-buffers 'ibuffer)
 ;;(defalias 'list-buffers 'ibuffer-other-window)
+
+(winner-mode 1)
 
 #+END_SRC
