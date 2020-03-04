@@ -19,6 +19,9 @@ Just loading a bunch of other org-files.
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/20-general-packages.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/21-org-mode.org"))
+;;(org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/roland/24-autoupdate.org"))
 
 #+END_SRC
 

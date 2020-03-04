@@ -1,0 +1,40 @@
+* Configure ido
+
+This is not a package. I am =just= putting the configuration here so that I can comment it out easily in ~00-roland.org~ (and use =swiper= instead).
+
+#+BEGIN_SRC emacs-lisp
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(defun ido-smart-select-text ()
+  "Select the current completed item. Do NOT descend into directories."
+  (interactive)
+  (when (and (or (not ido-require-match)
+                 (if (memq ido-require-match '(confirm confirm-after-completion))
+                     (if (or (eq ido-cur-item 'dir)
+                             (eq last-command this-command))
+                         t
+                       (setq ido-show-confirm-message t)
+                       nil))
+                 (ido-existing-item-p))
+             (not ido-incomplete-regexp))
+    (when ido-current-directory
+      (setq ido-exit 'takeprompt)
+      (unless (and ido-text (= 0 (length ido-text)))
+        (let ((match (ido-name (car ido-matches))))
+          (throw 'ido
+                 (setq ido-selected
+                       (if match
+                           (replace-regexp-in-string "/\\'" "" match)
+                         ido-text)
+                       ido-text ido-selected
+                       ido-final-text ido-text)))))
+    (exit-minibuffer)))
+
+(eval-after-load "ido"
+  '(define-key ido-common-completion-map "\C-m" 'ido-smart-select-text)
+)
+
+#+END_SRC

@@ -1,0 +1,14 @@
+* Install/configure autoupdate
+
+Note: Not sure, if this is really a good idea. Experimenting ... (can be commented out in ~00-roland.org~, if this turns out to be a bad idea).
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe)
+)
+
+#+END_SRC
