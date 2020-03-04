@@ -33,6 +33,12 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 )
 
+(use-package ox-reveal
+  :config
+  (setq org-reveal-root "https://revealjs.com/")
+  (setq org-reveal-title-slide nil)
+)
+
 (org-reload)
 
 #+END_SRC
