@@ -4,6 +4,8 @@
 
 (use-package go-mode)
 
+(use-package gotest)
+
 (use-package lsp-mode
   :config
   (add-hook 'go-mode-hook 'lsp-deferred)
