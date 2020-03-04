@@ -3,6 +3,12 @@
 #+BEGIN_SRC emacs-lisp
 
 (use-package org
+  :bind (
+    ("C-c l" . 'org-store-link)
+    ("C-c a" . 'org-agenda)
+    ("C-c c" . 'org-capture)
+    ("C-c b" . 'org-switchb)
+  )
   :config
   (setq org-directory "~/Dropbox/Notes")
   (setq org-default-notes-file (concat org-directory "/2020-Work.org"))
@@ -26,11 +32,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 )
-
-(global-set-key (kbd "\C-c l") 'org-store-link)
-(global-set-key (kbd "\C-c a") 'org-agenda)
-(global-set-key (kbd "\C-c c") 'org-capture)
-(global-set-key (kbd "\C-c b") 'org-switchb)
 
 (org-reload)
 

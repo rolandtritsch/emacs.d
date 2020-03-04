@@ -7,12 +7,14 @@ Note: This =seems= to use consule and ivy (and ...). So it is this *or* =ido=. D
 (use-package counsel)
 
 (use-package swiper
+  :bind (
+    ("C-s" . 'swiper)
+    ("M-x" . 'counsel-M-x)
+    ("C-x C-f" . 'counsel-find-file)
+  )
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
-  (global-set-key "\C-s" 'swiper)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 )
 
 #+END_SRC

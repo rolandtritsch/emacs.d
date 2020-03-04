@@ -13,9 +13,11 @@ Small packages to customize emacs itself.
 )
 
 (use-package ace-window
+  :bind (
+    ("C-x o" . 'ace-window)
+  )
   :config
   (progn
-    (global-set-key [remap other-window] 'ace-window)
     (custom-set-faces
       '(aw-leading-char-face
         ((t (:inherit ace-jump-face-foreground :height 2.0)))

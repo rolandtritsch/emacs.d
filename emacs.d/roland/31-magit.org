@@ -5,8 +5,10 @@ Make git work.
 #+BEGIN_SRC emacs-lisp
 
 (use-package magit
+  :bind (
+    ("C-x g" . 'magit-status)
+  )
   :config
-  (global-set-key (kbd "C-x g") 'magit-status)
   :custom
   (magit-wip-mode t)
   (magit-no-confirm (quote (safe-with-wip)))

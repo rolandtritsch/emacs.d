@@ -24,12 +24,11 @@
   ;; Optional - enable lsp-mode automatically in scala files
   :hook (scala-mode . lsp)
   :config (setq lsp-prefer-flymake nil)
+  :custom (lsp-keymap-prefix "C-c C-l")
 )
 
 (use-package lsp-ui)
 
 (use-package company-lsp)
-
-(setq lsp-keymap-prefix "C-c C-l")
 
 #+END_SRC
