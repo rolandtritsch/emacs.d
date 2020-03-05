@@ -2,7 +2,16 @@
 
 #+BEGIN_SRC emacs-lisp
 
-(use-package go-mode)
+(use-package go-mode
+  :config
+  (defun my-go-before-save-hook ()
+    (when (eq major-mode 'go-mode)
+      (lsp-format-buffer)
+      (go-test-current-project)
+    )
+  )
+  (add-hook 'before-save-hook #'my-go-before-save-hook)
+)
 
 (use-package gotest)
 
