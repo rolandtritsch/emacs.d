@@ -1,29 +1,51 @@
 * Basic packages
 
-Small packages to customize emacs itself.
+  Small packages to customize emacs itself.
 
-#+BEGIN_SRC emacs-lisp
+** Disable Mouse
 
-(use-package disable-mouse)
-(global-disable-mouse-mode)
+   #+BEGIN_SRC emacs-lisp
 
-(use-package which-key
-  :config
-  (which-key-mode)
-)
+     (use-package disable-mouse)
+     (global-disable-mouse-mode)
 
-(use-package ace-window
-  :bind (
-    ("C-x o" . 'ace-window)
-  )
-  :config
-  (progn
-    (custom-set-faces
-      '(aw-leading-char-face
-        ((t (:inherit ace-jump-face-foreground :height 2.0)))
-      )
-    )
-  )
-)
+   #+END_SRC
 
-#+END_SRC
+** Which Key
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package which-key
+       :config
+       (which-key-mode)
+     )
+
+   #+END_SRC
+
+** Ace Window
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package ace-window
+       :bind (
+         ("C-x o" . 'ace-window)
+       )
+       :config
+       (progn
+         (custom-set-faces
+           '(aw-leading-char-face
+             ((t (:inherit ace-jump-face-foreground :height 2.0)))
+           )
+         )
+       )
+     )
+
+   #+END_SRC
+
+** Lorem Ipsum
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package lorem-ipsum)
+
+   #+END_SRC

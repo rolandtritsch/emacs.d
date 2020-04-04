@@ -1,44 +1,50 @@
 * Basic stuff
 
-This is the stuff that is =package-independent=. Basically configuring emacs itself.
+  This is the stuff that is =package-independent=. Basically configuring emacs itself.
 
-Get rid of =screen clutter= (bar-mode, ...).
+** Get rid of =screen clutter= (bar-mode, ...).
 
-Do backup files, but keep them out of the way.
+   #+BEGIN_SRC emacs-lisp
+     (setq inhibit-startup-screen t)
+     (setq line-number-mode t)
+     (setq column-number-mode t)
 
-Switch on winner-mode (to go back (and forth) through the window layout history).
+     (scroll-bar-mode -1)
+     (tool-bar-mode -1)
+     (menu-bar-mode -1)
 
-#+BEGIN_SRC emacs-lisp
+     (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq inhibit-startup-screen t)
-(setq line-number-mode t)
-(setq column-number-mode t)
+     (setq-default indent-tabs-mode nil)
+     (setq-default tab-width 2)
 
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+     (global-unset-key (kbd "C-z"))
 
-(fset 'yes-or-no-p 'y-or-n-p)
+     (put 'dired-find-alternate-file 'disabled nil)
 
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+     (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(global-unset-key (kbd "C-z"))
+     (global-hl-line-mode 1)
 
-(put 'dired-find-alternate-file 'disabled nil)
+     ;; (global-linum-mode 1)
+   #+END_SRC
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+** Do backup files (but keep them out of the way)
 
-(setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
-(setq backup-by-copying t)
-(setq delete-old-versions t)
-(setq kept-new-versions 6)
-(setq kept-old-versions 2)
-(setq version-control t)
+   #+BEGIN_SRC emacs-lisp
+     (setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
+     (setq backup-by-copying t)
+     (setq delete-old-versions t)
+     (setq kept-new-versions 6)
+     (setq kept-old-versions 2)
+     (setq version-control t)
+   #+END_SRC
 
-(defalias 'list-buffers 'ibuffer)
-;;(defalias 'list-buffers 'ibuffer-other-window)
+** Switch on winner-mode (to go back (and forth) through the window layout history).
 
-(winner-mode 1)
+   #+BEGIN_SRC emacs-lisp
+     (defalias 'list-buffers 'ibuffer)
+     ;;(defalias 'list-buffers 'ibuffer-other-window)
 
-#+END_SRC
+     (winner-mode 1)
+   #+END_SRC
