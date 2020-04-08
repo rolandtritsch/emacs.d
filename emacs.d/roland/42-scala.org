@@ -21,14 +21,9 @@
 )
 
 (use-package lsp-mode
-  ;; Optional - enable lsp-mode automatically in scala files
-  :hook (scala-mode . lsp)
-  :config (setq lsp-prefer-flymake nil)
-  :custom (lsp-keymap-prefix "C-c C-l")
+  :hook (
+    (scala-mode . lsp-defered)
+  )
 )
-
-(use-package lsp-ui)
-
-(use-package company-lsp)
 
 #+END_SRC

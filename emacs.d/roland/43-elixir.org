@@ -1,25 +1,39 @@
 * Install/configure the elixir support
 
-#+BEGIN_SRC emacs-lisp
+** [Alchemist](https://github.com/tonini/alchemist.el)
 
-  (use-package alchemist
-    :config
-    (add-to-list 'elixir-mode-hook 'alchemist-mode)
-    :custom
-    (alchemist-goto-erlang-source-dir (expand-file-name "~/Development/Clone/otp"))
-    (alchemist-goto-elixir-source-dir (expand-file-name "~/Development/Clone/elixir"))
-    (alchemist-hooks-test-on-save t)
-    (alchemist-mix-test-default-options (quote ("--only focus")))
-    (alchemist-test-display-compilation-output t)
-  )
+   #+BEGIN_SRC emacs-lisp
 
-  (use-package company
-    :config
-    (add-to-list 'alchemist-mode-hook 'company-mode)
-  )
+     ;; (use-package alchemist
+     ;;   :config
+     ;;   (add-to-list 'elixir-mode-hook 'alchemist-mode)
+     ;;   :custom
+     ;;   (alchemist-goto-erlang-source-dir (expand-file-name "~/Development/Clone/otp"))
+     ;;   (alchemist-goto-elixir-source-dir (expand-file-name "~/Development/Clone/elixir"))
+     ;;   (alchemist-hooks-test-on-save t)
+     ;;   (alchemist-mix-test-default-options (quote ("--only focus")))
+     ;;   (alchemist-test-display-compilation-output t)
+     ;; )
 
-  (add-hook 'elixir-mode-hook
-    (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
-  )
+     ;; (use-package company
+     ;;   :config
+     ;;   (add-to-list 'alchemist-mode-hook 'company-mode)
+     ;; )
 
-#+END_SRC
+     ;; (add-hook 'elixir-mode-hook
+     ;;   (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
+     ;; )
+
+   #+END_SRC
+
+** LSP
+
+   #+BEGIN_SRC emacs-lisp
+
+    (use-package lsp-mode
+      :hook (
+        (elixir-mode . lsp-deferred)
+      )
+    )
+
+   #+END_SRC

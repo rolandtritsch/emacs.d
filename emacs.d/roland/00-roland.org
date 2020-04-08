@@ -32,6 +32,7 @@ Just loading a bunch of other org-files.
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/30-general-coding.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/31-magit.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-plantuml.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
 
 #+END_SRC
 
