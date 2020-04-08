@@ -1,0 +1,27 @@
+* Install/configure lsp-mode
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package lsp-mode
+    :init
+    (setq lsp-prefer-flymake nil)
+    :hook (
+      (before-save . lsp-format-buffer)
+      (before-save . lsp-organize-imports)
+      (lsp-mode . lsp-enable-which-key-integration)
+    )
+    :config
+    (setq lsp-auto-configure t)
+    (setq lsp-enable-completion-at-point t)
+    (setq lsp-enable-xref t)
+    (setq lsp-enable-indentation t)
+    (setq lsp-enable-on-type-formatting t)
+    (setq lsp-before-save-edits t)
+    :custom
+    (lsp-keymap-prefix "C-c C-l")
+  )
+
+  (use-package lsp-ui)
+  (use-package company-lsp)
+
+#+END_SRC
