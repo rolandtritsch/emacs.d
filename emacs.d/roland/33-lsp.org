@@ -7,7 +7,7 @@
     (setq lsp-prefer-flymake nil)
     :hook (
       (before-save . lsp-format-buffer)
-      (before-save . lsp-organize-imports)
+      ;; (before-save . lsp-organize-imports)
       (lsp-mode . lsp-enable-which-key-integration)
     )
     :config
