@@ -2,17 +2,28 @@
 
 #+BEGIN_SRC emacs-lisp
 
-(use-package flycheck
-  :init
-  (global-flycheck-mode)
-)
+  (use-package flycheck
+    :init
+    (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+    (global-flycheck-mode)
+  )
 
-(use-package company)
-
-(use-package protobuf-mode)
-(use-package json-mode)
-(use-package yaml-mode)
-(use-package markdown-mode)
-(use-package markdown-toc)
+  (use-package company
+    :init
+    (global-company-mode)
+  )
+  (use-package protobuf-mode)
+  (use-package json-mode)
+  (use-package yaml-mode)
+  (use-package markdown-mode)
+  (use-package markdown-toc)
+  (use-package yasnippet
+    :bind (
+      ("C-c y e" . 'yas-expand)
+    )
+    :init
+    (yas-global-mode)
+  )
+  (use-package yasnippet-snippets)
 
 #+END_SRC
