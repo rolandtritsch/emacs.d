@@ -2,7 +2,10 @@
 
   This is the stuff that is =package-independent=. Basically configuring emacs itself.
 
-** Get rid of =screen clutter= (bar-mode, ...).
+** General
+  - Get rid of screen clutter
+  - Get rid of tabs/whitespaces
+  - Make it look good
 
    #+BEGIN_SRC emacs-lisp
      (setq inhibit-startup-screen t)
@@ -17,15 +20,14 @@
 
      (setq-default indent-tabs-mode nil)
      (setq-default tab-width 2)
+     (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
      (global-unset-key (kbd "C-z"))
 
      (put 'dired-find-alternate-file 'disabled nil)
-
-     (add-hook 'before-save-hook 'delete-trailing-whitespace)
+     (setq dired-listing-switches "-Bhl  --group-directories-first")
 
      (global-hl-line-mode 1)
-
      ;; (global-linum-mode 1)
    #+END_SRC
 
