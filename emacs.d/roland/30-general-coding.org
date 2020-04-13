@@ -3,13 +3,13 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package flycheck
-    :init
+    :config
     (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
     (global-flycheck-mode)
   )
 
   (use-package company
-    :init
+    :config
     (global-company-mode)
   )
   (use-package protobuf-mode)
@@ -21,7 +21,7 @@
     :bind (
       ("C-c y e" . 'yas-expand)
     )
-    :init
+    :config
     (yas-global-mode)
   )
   (use-package yasnippet-snippets)

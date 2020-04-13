@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Centered Image
+# contributor: Roland Tritsch <roland@tritsch.org>
+# key: cimg
+# --
+<p align="center">
+<img alt="${1:Alt Text}" src="${2:URL}" width="100%" height="100%" style="float: left;" hspace="30" vspace="10"/>
+</p>
+$0
