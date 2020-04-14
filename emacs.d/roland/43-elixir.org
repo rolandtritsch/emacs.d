@@ -60,3 +60,16 @@
     )
 
    #+END_SRC
+** InfElixir
+
+   #+BEGIN_SRC emacs-lisp
+
+    (use-package inf-elixir
+      :load-path "packages/inf-elixir/"
+      :bind (
+        ("C-c C-l i i" . 'inf-elixir)
+        ("C-c C-l i p" . 'inf-elixir-project)
+      )
+    )
+
+   #+END_SRC
