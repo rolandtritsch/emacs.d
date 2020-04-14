@@ -1,0 +1,3 @@
+[submodule "emacs.d/packages/inf-elixir"]
+	path = emacs.d/packages/inf-elixir
+	url = https://github.com/J3RN/inf-elixir.git
