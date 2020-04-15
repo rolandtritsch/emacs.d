@@ -10,3 +10,6 @@ ido.last
 org-clock-save.el
 .last-package-update-day
 recentf
+.cache
+projectile.cache
+projectile-bookmarks.eld
