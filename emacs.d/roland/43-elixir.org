@@ -43,10 +43,10 @@
 
     (use-package exunit
       :bind (
-        ("C-c C-l u u" . 'exunit-verify)
-        ("C-c C-l u p" . 'exunit-verify-single)
-        ("C-c C-l u r" . 'exunit-rerun)
-        ("C-c C-l u t" . 'exunit-toggle-file-and-test)
+        ("C-c C-u u" . 'exunit-verify)
+        ("C-c C-u p" . 'exunit-verify-single)
+        ("C-c C-u r" . 'exunit-rerun)
+        ("C-c C-u t" . 'exunit-toggle-file-and-test)
       )
       :hook (
         (after-save . my-exunit-after-save-hook)
@@ -54,7 +54,7 @@
       :config
       (defun my-exunit-after-save-hook ()
         (when (eq major-mode 'elixir-mode)
-          (exunit-verify-all)
+          (exunit-rerun)
         )
       )
     )
