@@ -1,29 +1,69 @@
 * General coding stuff
 
-#+BEGIN_SRC emacs-lisp
+** Modes
 
-  (use-package flycheck
-    :config
-    (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-    (global-flycheck-mode)
-  )
+   #+BEGIN_SRC emacs-lisp
 
-  (use-package company
-    :config
-    (global-company-mode)
-  )
-  (use-package protobuf-mode)
-  (use-package json-mode)
-  (use-package yaml-mode)
-  (use-package markdown-mode)
-  (use-package markdown-toc)
-  (use-package yasnippet
-    :bind (
-      ("C-c y e" . 'yas-expand)
+     (use-package protobuf-mode)
+     (use-package json-mode)
+     (use-package yaml-mode)
+     (use-package markdown-mode)
+     (use-package markdown-toc)
+
+   #+END_SRC
+
+** Flycheck
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package flycheck
+       :config
+       (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+       (global-flycheck-mode)
+     )
+
+   #+END_SRC
+
+** Company
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package company
+       :config
+       (global-company-mode)
+     )
+
+   #+END_SRC
+
+** YasSnippet
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package yasnippet
+       :bind (
+         ("C-c C-y e" . 'yas-expand)
+       )
+       :config
+       (yas-global-mode)
+     )
+
+     (use-package yasnippet-snippets)
+
+   #+END_SRC
+
+** Projectile
+
+   #+BEGIN_SRC emacs-lisp
+
+    (use-package projectile
+       :config
+       (add-to-list 'projectile-globally-ignored-directories "_build")
+       (add-to-list 'projectile-globally-ignored-directories "deps")
+       (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
+
+       (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
+       (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+       (projectile-mode)
     )
-    :config
-    (yas-global-mode)
-  )
-  (use-package yasnippet-snippets)
 
-#+END_SRC
+   #+END_SRC
