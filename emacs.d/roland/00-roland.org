@@ -22,6 +22,7 @@ Just loading a bunch of other org-files.
 ;;(org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
 (org-babel-load-file (expand-file-name "~/.emacs.d/roland/24-autoupdate.org"))
+(org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
 
 #+END_SRC
 
