@@ -43,7 +43,8 @@
 
     (use-package exunit
       :bind (
-        ("C-c C-u u" . 'exunit-verify)
+        ("C-c C-u u" . 'exunit-verify-all)
+        ("C-c C-u f" . 'exunit-verify)
         ("C-c C-u p" . 'exunit-verify-single)
         ("C-c C-u r" . 'exunit-rerun)
         ("C-c C-u t" . 'exunit-toggle-file-and-test)
