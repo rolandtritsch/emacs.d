@@ -4,10 +4,10 @@
 
   (use-package org
     :bind (
-      ("C-c C-o l" . 'org-store-link)
-      ("C-c C-o a" . 'org-agenda)
-      ("C-c C-o c" . 'org-capture)
-      ("C-c C-o b" . 'org-switchb)
+      ("C-c o l" . 'org-store-link)
+      ("C-c o a" . 'org-agenda)
+      ("C-c o c" . 'org-capture)
+      ("C-c o b" . 'org-switchb)
     )
     :config
     (setq org-directory "~/Dropbox/Notes")
