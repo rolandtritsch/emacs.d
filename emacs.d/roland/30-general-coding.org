@@ -9,6 +9,7 @@
      (use-package yaml-mode)
      (use-package markdown-mode)
      (use-package markdown-toc)
+     (use-package edit-indirect)
 
    #+END_SRC
 
@@ -67,3 +68,14 @@
     )
 
    #+END_SRC
+
+** Mermaid
+
+   #+BEGIN_SRC emacs-lisp
+
+    (use-package mermaid-mode
+      :load-path "packages/mermaid-mode/"
+    )
+
+   #+END_SRC
+
