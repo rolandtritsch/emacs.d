@@ -49,3 +49,14 @@
      (use-package lorem-ipsum)
 
    #+END_SRC
+
+** Solarized Theme
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package solarized-theme
+       :config
+       (load-theme 'solarized-light t)
+     )
+
+   #+END_SRC
