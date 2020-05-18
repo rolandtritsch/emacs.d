@@ -1,0 +1,6 @@
+[submodule "packages/inf-elixir"]
+	path = packages/inf-elixir
+	url = git@github.com:rolandtritsch/inf-elixir.git
+[submodule "packages/mermaid-mode"]
+	path = packages/mermaid-mode
+	url = git@github.com:rolandtritsch/mermaid-mode
