@@ -1,6 +1,8 @@
 * Install/configure org-mode
 
-#+BEGIN_SRC emacs-lisp
+** Basic
+
+   #+BEGIN_SRC emacs-lisp
 
   (use-package org
     :bind (
@@ -28,18 +30,30 @@
     (org-agenda-files "~/Dropbox/Notes/2020.agenda_files")
   )
 
+   #+END_SRC
+
+** Bullets
+
+   #+BEGIN_SRC emacs-lisp
+
   (use-package org-bullets
     :hook (
       (org-mode . org-bullets-mode)
     )
   )
 
+   #+END_SRC
+
+** Reveal
+
+   #+BEGIN_SRC emacs-lisp
+
   (use-package ox-reveal
     :config
-    (setq org-reveal-root "https://revealjs.com/")
+    (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js/")
     (use-package htmlize)
   )
 
   (org-reload)
 
-#+END_SRC
+   #+END_SRC
