@@ -26,3 +26,8 @@
   (use-package gotest)
 
 #+END_SRC
+
+Note: You also need to install [[https://github.com/golang/tools/blob/master/gopls/README.md][gopls]] ...
+
+- =go get golang.org/x/tools/gopls@latest=
+- =ln -s ~/.asdf/installs/golang/1.14.3/packages/bin/gopls ~/.local/bin/gopls=

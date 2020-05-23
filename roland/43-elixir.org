@@ -37,6 +37,11 @@
     )
 
    #+END_SRC
+
+   Note: You also need to install [[https://github.com/elixir-lsp/elixir-ls][elixir_ls]] ...
+
+   - =mix elixir_ls.release -o ~/.local/bin=
+
 ** ExUnit
 
    #+BEGIN_SRC emacs-lisp
