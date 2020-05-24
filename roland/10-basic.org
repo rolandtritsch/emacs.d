@@ -29,6 +29,8 @@
 
      (global-hl-line-mode 1)
      ;; (global-linum-mode 1)
+
+     (load-theme 'tango t)
    #+END_SRC
 
 ** Do backup files (but keep them out of the way)

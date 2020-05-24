@@ -56,7 +56,7 @@
 
      (use-package solarized-theme
        :config
-       (load-theme 'solarized-light t)
+       ;;(load-theme 'solarized-light t)
      )
 
    #+END_SRC
