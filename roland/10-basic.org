@@ -27,8 +27,8 @@
      (put 'dired-find-alternate-file 'disabled nil)
      (setq dired-listing-switches "-Bhl  --group-directories-first")
 
-     (global-hl-line-mode 1)
-     ;; (global-linum-mode 1)
+     (global-hl-line-mode 0)
+     (global-linum-mode 0)
 
      (load-theme 'tango t)
    #+END_SRC
