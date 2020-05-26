@@ -8,6 +8,7 @@
   - Make it look good
 
    #+BEGIN_SRC emacs-lisp
+
      (setq inhibit-startup-screen t)
      (setq line-number-mode t)
      (setq column-number-mode t)
@@ -21,6 +22,7 @@
      (setq-default indent-tabs-mode nil)
      (setq-default tab-width 2)
      (add-hook 'before-save-hook 'delete-trailing-whitespace)
+     (setq-default require-final-newline t)
 
      (global-unset-key (kbd "C-z"))
 
@@ -31,24 +33,29 @@
      (global-linum-mode 0)
 
      (load-theme 'tango t)
+
    #+END_SRC
 
 ** Do backup files (but keep them out of the way)
 
    #+BEGIN_SRC emacs-lisp
+
      (setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
      (setq backup-by-copying t)
      (setq delete-old-versions t)
      (setq kept-new-versions 6)
      (setq kept-old-versions 2)
      (setq version-control t)
+
    #+END_SRC
 
 ** Switch on winner-mode (to go back (and forth) through the window layout history).
 
    #+BEGIN_SRC emacs-lisp
+
      (defalias 'list-buffers 'ibuffer)
      ;;(defalias 'list-buffers 'ibuffer-other-window)
 
      (winner-mode 1)
+
    #+END_SRC
