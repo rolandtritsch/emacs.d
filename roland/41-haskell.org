@@ -2,6 +2,14 @@
 
 #+BEGIN_SRC emacs-lisp
 
-(use-package intero)
+  (use-package haskell-mode)
+
+  (use-package lsp-haskell
+    :hook (
+      (haskell-mode . lsp-deferred)
+    )
+  )
 
 #+END_SRC
+
+Note: You need to install [[https://github.com/haskell/haskell-ide-engine][hie]] (and before that (obvioulsy) [[https://docs.haskellstack.org/en/stable/README/][stack]] and git).
