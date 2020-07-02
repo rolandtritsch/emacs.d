@@ -57,14 +57,14 @@
    #+BEGIN_SRC emacs-lisp
 
     (use-package projectile
-       :config
-       (add-to-list 'projectile-globally-ignored-directories "_build")
-       (add-to-list 'projectile-globally-ignored-directories "deps")
-       (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
+      :config
+      (add-to-list 'projectile-globally-ignored-directories "_build")
+      (add-to-list 'projectile-globally-ignored-directories "deps")
+      (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
 
-       (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
-       (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
-       (projectile-mode)
+      (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
+      (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+      (projectile-mode)
     )
 
    #+END_SRC
@@ -73,9 +73,28 @@
 
    #+BEGIN_SRC emacs-lisp
 
-    (use-package mermaid-mode
-      :load-path "packages/mermaid-mode/"
-    )
+     (use-package mermaid-mode
+       :load-path "packages/mermaid-mode/"
+       :config
+       (setq mermaid-mode-map
+         (let ((map mermaid-mode-map))
+           (define-key map (kbd "C-c C-c") nil)
+           (define-key map (kbd "C-c C-f") nil)
+           (define-key map (kbd "C-c C-b") nil)
+           (define-key map (kbd "C-c C-r") nil)
+           (define-key map (kbd "C-c C-o") nil)
+           (define-key map (kbd "C-c C-d") nil)
+           (define-key map (kbd "C-c C-d c") 'mermaid-compile)
+           (define-key map (kbd "C-c C-d c") 'mermaid-compile)
+           (define-key map (kbd "C-c C-d f") 'mermaid-compile-file)
+           (define-key map (kbd "C-c C-d b") 'mermaid-compile-buffer)
+           (define-key map (kbd "C-c C-d r") 'mermaid-compile-region)
+           (define-key map (kbd "C-c C-d o") 'mermaid-open-browser)
+           (define-key map (kbd "C-c C-d d") 'mermaid-open-doc)
+           map
+         )
+       )
+     )
 
    #+END_SRC
 

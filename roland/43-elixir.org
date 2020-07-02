@@ -1,5 +1,13 @@
 * Install/configure the elixir support
 
+** First things first
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package elixir-mode)
+
+   #+END_SRC
+
 ** [Alchemist](https://github.com/tonini/alchemist.el)
 
    #+BEGIN_SRC emacs-lisp
