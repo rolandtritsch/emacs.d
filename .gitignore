@@ -9,7 +9,7 @@ ido.last
 .lsp-session-v1
 org-clock-save.el
 .last-package-update-day
-recentf
+*recentf*
 .cache
 projectile.cache
 projectile-bookmarks.eld
