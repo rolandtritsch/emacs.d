@@ -3,4 +3,4 @@
 	url = git@github.com:rolandtritsch/inf-elixir.git
 [submodule "packages/mermaid-mode"]
 	path = packages/mermaid-mode
-	url = git@github.com:rolandtritsch/mermaid-mode
+	url = https://github.com/abrochard/mermaid-mode.git
