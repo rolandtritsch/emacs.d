@@ -10,6 +10,10 @@
      (use-package markdown-mode)
      (use-package markdown-toc)
      (use-package edit-indirect)
+     (use-package makefile-executor
+       :config
+       (add-hook 'makefile-mode-hook 'makefile-executor-mode)
+     )
 
    #+END_SRC
 
