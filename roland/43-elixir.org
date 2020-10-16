@@ -1,36 +1,10 @@
-* Install/configure the elixir support
+* Install/configure the support for elixir
 
 ** First things first
 
    #+BEGIN_SRC emacs-lisp
 
      (use-package elixir-mode)
-
-   #+END_SRC
-
-** [Alchemist](https://github.com/tonini/alchemist.el)
-
-   #+BEGIN_SRC emacs-lisp
-
-     ;; (use-package alchemist
-     ;;   :config
-     ;;   (add-to-list 'elixir-mode-hook 'alchemist-mode)
-     ;;   :custom
-     ;;   (alchemist-goto-erlang-source-dir (expand-file-name "~/Development/Clone/otp"))
-     ;;   (alchemist-goto-elixir-source-dir (expand-file-name "~/Development/Clone/elixir"))
-     ;;   (alchemist-hooks-test-on-save t)
-     ;;   (alchemist-mix-test-default-options (quote ("--only focus")))
-     ;;   (alchemist-test-display-compilation-output t)
-     ;; )
-
-     ;; (use-package company
-     ;;   :config
-     ;;   (add-to-list 'alchemist-mode-hook 'company-mode)
-     ;; )
-
-     ;; (add-hook 'elixir-mode-hook
-     ;;   (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
-     ;; )
 
    #+END_SRC
 
@@ -87,6 +61,15 @@
         ("C-c C-l i r" . 'inf-elixir-send-region)
         ("C-c C-l i b" . 'inf-elixir-send-buffer)
       )
+    )
+
+   #+END_SRC
+** Mix
+
+   #+BEGIN_SRC emacs-lisp
+
+    (use-package mix
+      :load-path "packages/mix.el/"
     )
 
    #+END_SRC
