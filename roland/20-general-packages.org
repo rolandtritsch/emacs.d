@@ -60,3 +60,10 @@
      )
 
    #+END_SRC
+** Default Text Scale
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package default-text-scale)
+
+   #+END_SRC

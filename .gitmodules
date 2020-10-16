@@ -4,3 +4,6 @@
 [submodule "packages/mermaid-mode"]
 	path = packages/mermaid-mode
 	url = https://github.com/abrochard/mermaid-mode.git
+[submodule "packages/mix.el"]
+	path = packages/mix.el
+	url = https://github.com/ayrat555/mix.el.git
