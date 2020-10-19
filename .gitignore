@@ -13,3 +13,4 @@ org-clock-save.el
 .cache
 projectile.cache
 projectile-bookmarks.eld
+.dap-breakpoints
