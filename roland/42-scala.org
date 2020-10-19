@@ -26,6 +26,8 @@
     )
   )
 
+  (use-package lsp-metals)
+
 #+END_SRC
 
 Note: You also need to install [[https://scalameta.org/metals/docs/editors/emacs.html][Metals]].
