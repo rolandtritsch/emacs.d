@@ -12,6 +12,7 @@
      (setq inhibit-startup-screen t)
      (setq line-number-mode t)
      (setq column-number-mode t)
+     (set-frame-font "ibm3270 14" nil t)
 
      (scroll-bar-mode -1)
      (tool-bar-mode -1)
@@ -33,7 +34,6 @@
      (global-linum-mode 0)
 
      (load-theme 'tango t)
-
    #+END_SRC
 
 ** Do backup files (but keep them out of the way)
