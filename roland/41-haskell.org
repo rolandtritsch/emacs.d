@@ -12,4 +12,4 @@
 
 #+END_SRC
 
-Note: You need to install [[https://github.com/haskell/haskell-ide-engine][hie]] (and before that (obvioulsy) [[https://docs.haskellstack.org/en/stable/README/][stack]] and git).
+Note: You need to install [[https://github.com/haskell/haskell-language-server][haskell-language-server]] (and before that (obvioulsy) [[https://docs.haskellstack.org/en/stable/README/][stack]] and git).
