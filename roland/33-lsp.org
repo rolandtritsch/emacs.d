@@ -13,7 +13,7 @@
     )
     :config
     (setq lsp-auto-configure t)
-    (setq lsp-enable-completion-at-point t)
+    (setq lsp-completion-enable t)
     (setq lsp-enable-xref t)
     (setq lsp-enable-indentation t)
     (setq lsp-enable-on-type-formatting t)
@@ -22,9 +22,6 @@
   )
 
   (use-package lsp-ui)
-  (use-package company-lsp
-    :config
-    (push 'company-lsp company-backends)
-  )
+  (use-package company-lsp)
 
 #+END_SRC
