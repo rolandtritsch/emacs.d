@@ -67,3 +67,10 @@
      (use-package default-text-scale)
 
    #+END_SRC
+** Resize Windows
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package windresize)
+
+   #+END_SRC
