@@ -8,6 +8,8 @@
     :hook (
       (haskell-mode . lsp-deferred)
     )
+    :config
+    (setq lsp-haskell-formatting-provider "ormolu")
   )
 
 #+END_SRC
