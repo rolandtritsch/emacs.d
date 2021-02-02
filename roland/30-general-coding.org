@@ -24,6 +24,7 @@
      (use-package flycheck
        :config
        (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+       (setq flycheck-markdown-markdownlint-cli-config ".markdownlint.json")
        (global-flycheck-mode)
      )
 
