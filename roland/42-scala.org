@@ -4,6 +4,8 @@
 
   (use-package scala-mode
     :mode "\\.s\\(cala\\|bt\\)$"
+    :interpreter
+      ("scala" . scala-mode)
   )
 
   (use-package sbt-mode
@@ -21,9 +23,8 @@
   )
 
   (use-package lsp-mode
-    :hook (
+    :hook 
       (scala-mode . lsp-deferred)
-    )
   )
 
   (use-package lsp-metals)
