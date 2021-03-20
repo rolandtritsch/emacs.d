@@ -22,6 +22,5 @@
   )
 
   (use-package lsp-ui)
-  (use-package company-lsp)
 
 #+END_SRC
