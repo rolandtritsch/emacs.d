@@ -65,6 +65,7 @@
    #+BEGIN_SRC emacs-lisp
 
      (use-package default-text-scale)
+     (default-text-scale-mode)
 
    #+END_SRC
 ** Resize Windows
