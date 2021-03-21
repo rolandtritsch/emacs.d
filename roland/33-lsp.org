@@ -9,16 +9,19 @@
     (setq lsp-keymap-prefix "C-c C-l")
     :hook (
       (before-save . lsp-format-buffer)
-      ;; (before-save . lsp-organize-imports)
+      (before-save . lsp-organize-imports)
     )
     :config
     (setq lsp-auto-configure t)
+    (setq lsp-before-save-edits t)
     (setq lsp-completion-enable t)
-    (setq lsp-enable-xref t)
     (setq lsp-enable-indentation t)
     (setq lsp-enable-on-type-formatting t)
-    (setq lsp-before-save-edits t)
     (setq lsp-enable-which-key-integration t)
+    (setq lsp-enable-xref t)
+    (setq lsp-modeline-code-actions-enable t)
+    (setq lsp-modeline-code-actions-segments '(count icon name))
+    (setq lsp-modeline-diagnostics-enable t)
   )
 
   (use-package lsp-ui)
