@@ -13,16 +13,21 @@
    #+BEGIN_SRC emacs-lisp
 
     (use-package lsp-mode
+      :commands lsp
+      :ensure t
+      :diminish lsp-mode
       :hook (
         (elixir-mode . lsp-deferred)
       )
-    )
+      :init
+      (add-to-list 'exec-path "~/.local/bin/elixir_ls")
+   )
 
    #+END_SRC
 
    Note: You also need to install [[https://github.com/elixir-lsp/elixir-ls][elixir_ls]] ...
 
-   - =mix elixir_ls.release -o ~/.local/bin=
+   - =mix elixir_ls.release -o ~/.local/bin/elixir_ls=
 
 ** ExUnit
 
