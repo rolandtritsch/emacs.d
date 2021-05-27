@@ -26,6 +26,9 @@
     ))
     (setq org-lowest-priority ?D)
     (setq org-default-priority ?D)
+    (setq org-refile-targets '(
+      (org-agenda-files :maxlevel . 1)
+    ))    
     :custom
     (org-agenda-files "~/Dropbox/Notes/2020.agenda_files")
   )
