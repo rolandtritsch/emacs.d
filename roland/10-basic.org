@@ -12,7 +12,7 @@
      (setq inhibit-startup-screen t)
      (setq line-number-mode t)
      (setq column-number-mode t)
-     (set-frame-font "ibm3270 14" nil t)
+     (set-frame-font "firacode 14" nil t)
 
      (scroll-bar-mode -1)
      (tool-bar-mode -1)
