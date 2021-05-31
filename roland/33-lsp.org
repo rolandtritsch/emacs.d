@@ -24,6 +24,20 @@
     (setq lsp-modeline-diagnostics-enable t)
   )
 
-  (use-package lsp-ui)
+  (use-package lsp-ui
+    :config
+    (setq lsp-ui-sideline-show-diagnostics t)
+    (setq lsp-ui-sideline-show-hover t)
+    (setq lsp-ui-sideline-show-code-actions t)
+    (setq lsp-ui-sideline-update-mode 'line) ;; or nil
+    (setq lsp-ui-sideline-delay 60)
+    (setq lsp-ui-peek-enable nil)
+    (setq lsp-ui-peek-show-directory t)
+    (setq lsp-ui-doc-enable nil)
+    (setq lsp-ui-doc-position 'top) ;; or 'bottom or 'at-point
+    (setq lsp-ui-doc-delay 1)
+    (setq lsp-ui-doc-show-with-cursor t)
+    (setq lsp-ui-doc-show-with-mouse nil)
+  )
 
 #+END_SRC
