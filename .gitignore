@@ -14,3 +14,4 @@ org-clock-save.el
 projectile.cache
 projectile-bookmarks.eld
 .dap-breakpoints
+forge-database.sqlite

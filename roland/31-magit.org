@@ -8,9 +8,19 @@ Make git work.
   :bind (
     ("C-x g" . 'magit-status)
   )
+  :config
+  (setq magit-pull-or-fetch t)
+  (define-key magit-mode-map "f" 'magit-pull)
+  (define-key magit-mode-map "F" nil)
   :custom
   (magit-wip-mode t)
   (magit-no-confirm (quote (safe-with-wip)))
+)
+
+(use-package forge
+  :after magit
+  :config
+  (setq auth-sources '("~/.authforge"))
 )
 
 #+END_SRC
