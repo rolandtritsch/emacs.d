@@ -1,6 +1,6 @@
 * Install/configure magit
 
-Make git work.
+Make git/magit/forge work.
 
 #+BEGIN_SRC emacs-lisp
 
@@ -22,5 +22,12 @@ Make git work.
   :config
   (setq auth-sources '("~/.authforge"))
 )
+
+(defun my-forge-post-submit-callback-kill-url (value _headers _status _req)
+  (when t
+    (when-let ((url (alist-get 'html_url value)))
+      (kill-new url))))
+
+(add-hook 'forge-post-submit-callback-hook 'my-forge-post-submit-callback-kill-url)
 
 #+END_SRC
