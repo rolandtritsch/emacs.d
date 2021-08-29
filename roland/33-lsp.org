@@ -19,6 +19,7 @@
     (setq lsp-enable-on-type-formatting t)
     (setq lsp-enable-which-key-integration t)
     (setq lsp-enable-xref t)
+    (setq lsp-headerline-breadcrumb-enable nil)  
     (setq lsp-modeline-code-actions-enable t)
     (setq lsp-modeline-code-actions-segments '(count icon name))
     (setq lsp-modeline-diagnostics-enable t)
