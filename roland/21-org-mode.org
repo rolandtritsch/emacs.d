@@ -53,7 +53,7 @@
 
   (use-package ox-reveal
     :config
-    (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js/")
+    (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
     (use-package htmlize)
   )
 
