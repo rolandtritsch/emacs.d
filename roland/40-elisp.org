@@ -7,7 +7,6 @@
       :config 
       (defun my-elisp-before-save-hook() 
         (when (eq major-mode 'emacs-elisp-mode 
-          (elisp-format-buffer) 
-          (delete-trailing-whitespace)))))
+          (elisp-format-buffer)))))
 
   #+END_SRC

@@ -22,8 +22,13 @@
 
      (setq-default indent-tabs-mode nil)
      (setq-default tab-width 2)
-     (add-hook 'before-save-hook 'delete-trailing-whitespace)
      (setq-default require-final-newline t)
+     (add-hook 'before-save-hook
+       (lambda ()
+         (unless (or
+           (eq major-mode 'fundamental-mode)
+           (eq major-mode 'makefile-gmake-mode))
+             (delete-trailing-whitespace))))
 
      (global-unset-key (kbd "C-z"))
 
