@@ -5,6 +5,10 @@
    #+BEGIN_SRC emacs-lisp
 
      (use-package elixir-mode)
+     (add-hook 'before-save-hook
+       (lambda ()
+         (when (eq major-mode 'elixir-mode)
+           (elixir-format))))
 
    #+END_SRC
 
