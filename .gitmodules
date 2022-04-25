@@ -7,3 +7,6 @@
 [submodule "packages/mix.el"]
 	path = packages/mix.el
 	url = https://github.com/ayrat555/mix.el.git
+[submodule "packages/lockstep"]
+	path = packages/lockstep
+	url = https://github.com/tjim/lockstep.git
