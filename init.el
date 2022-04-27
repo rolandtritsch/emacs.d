@@ -9,7 +9,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sudoku forge company windresize lsp-metals default-text-scale elixir-mode lsp-haskell light-blue-theme solarized-theme edit-indirect mermaid-mode projectile-elixir treemacs-magit treemacs-icons-dired treemacs-projectile treemacs inf-elixir inf-elixr yasnippet-snippets yasnippet elisp-format elsip-format exunit lorem-ipsum gotest htmlize ox-reveal go-mode zenburn-theme yaml-mode which-key use-package ubuntu-theme scala-mode sbt-mode protobuf-mode org-bullets org-beautify-theme org monochrome-theme minimal-theme markdown-toc magit lsp-ui leuven-theme kosmos-theme json-mode intero flycheck-plantuml disable-mouse company-lsp basic-theme autumn-light-theme arjen-grey-theme apropospriate-theme anti-zenburn-theme alchemist afternoon-theme ace-window abyss-theme))))
+    (yafolding sudoku forge company windresize lsp-metals default-text-scale elixir-mode lsp-haskell light-blue-theme solarized-theme edit-indirect mermaid-mode projectile-elixir treemacs-magit treemacs-icons-dired treemacs-projectile treemacs inf-elixir inf-elixr yasnippet-snippets yasnippet elisp-format elsip-format exunit lorem-ipsum gotest htmlize ox-reveal go-mode zenburn-theme yaml-mode which-key use-package ubuntu-theme scala-mode sbt-mode protobuf-mode org-bullets org-beautify-theme org monochrome-theme minimal-theme markdown-toc magit lsp-ui leuven-theme kosmos-theme json-mode intero flycheck-plantuml disable-mouse company-lsp basic-theme autumn-light-theme arjen-grey-theme apropospriate-theme anti-zenburn-theme alchemist afternoon-theme ace-window abyss-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

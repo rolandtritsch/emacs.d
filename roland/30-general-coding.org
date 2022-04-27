@@ -57,6 +57,22 @@
 
    #+END_SRC
 
+** YaFolding
+
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package yafolding
+       :bind (
+         ("C-c C-y t a" . 'yafolding-toggle-all)
+         ("C-c C-y t e" . 'yafolding-toggle-element)
+       )
+       :hook (
+         (prog-mode . yafolding-mode)
+       )
+     )
+
+   #+END_SRC
+
 ** Projectile
 
    #+BEGIN_SRC emacs-lisp
@@ -102,8 +118,6 @@
      )
 
    #+END_SRC
-
-
 
 ** Lockstep
 
