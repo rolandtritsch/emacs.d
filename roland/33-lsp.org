@@ -8,9 +8,9 @@
     (setq lsp-prefer-flymake nil)
     (setq lsp-keymap-prefix "C-c C-l")
     :hook (
-      (before-save . lsp-format-buffer)
-      (before-save . lsp-organize-imports)
-    )
+           (before-save . lsp-format-buffer)
+           (before-save . lsp-organize-imports)
+           )
     :config
     (setq lsp-auto-configure t)
     (setq lsp-before-save-edits t)
@@ -23,7 +23,7 @@
     (setq lsp-modeline-code-actions-enable t)
     (setq lsp-modeline-code-actions-segments '(count icon name))
     (setq lsp-modeline-diagnostics-enable t)
-  )
+    )
 
   (use-package lsp-ui
     :config
@@ -39,6 +39,6 @@
     (setq lsp-ui-doc-delay 1)
     (setq lsp-ui-doc-show-with-cursor t)
     (setq lsp-ui-doc-show-with-mouse nil)
-  )
+    )
 
 #+END_SRC

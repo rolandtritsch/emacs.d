@@ -1,33 +1,33 @@
 * Install/configure support for Go
 
+*Note:* You also need to install [[https://github.com/golang/tools/blob/master/gopls/README.md][gopls]] ...
+
+- =go get golang.org/x/tools/gopls@latest=
+- =ln -s ~/.asdf/installs/golang/1.14.3/packages/bin/gopls ~/.local/bin/gopls=
+
 #+BEGIN_SRC emacs-lisp
 
   (use-package go-mode
     :hook (
-      (after-save . my-go-after-save-hook)
-    )
+           (after-save . my-go-after-save-hook)
+           )
     :config
     (defun my-go-after-save-hook ()
       (when (eq major-mode 'go-mode)
         (if (string= (buffer-name) "main.go")
-          (go-run)
+            (go-run)
           (go-test-current-project)
+          )
         )
       )
     )
-  )
 
   (use-package lsp-mode
     :hook (
-      (go-mode . lsp-deferred)
+           (go-mode . lsp-deferred)
+           )
     )
-  )
 
   (use-package gotest)
 
 #+END_SRC
-
-Note: You also need to install [[https://github.com/golang/tools/blob/master/gopls/README.md][gopls]] ...
-
-- =go get golang.org/x/tools/gopls@latest=
-- =ln -s ~/.asdf/installs/golang/1.14.3/packages/bin/gopls ~/.local/bin/gopls=

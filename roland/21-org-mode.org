@@ -2,61 +2,61 @@
 
 ** Basic
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
   (use-package org
     :bind (
-      ("C-c o l" . 'org-store-link)
-      ("C-c o a" . 'org-agenda)
-      ("C-c o c" . 'org-capture)
-      ("C-c o b" . 'org-switchb)
-    )
+           ("C-c o l" . 'org-store-link)
+           ("C-c o a" . 'org-agenda)
+           ("C-c o c" . 'org-capture)
+           ("C-c o b" . 'org-switchb)
+           )
     :config
     (setq org-directory "~/Dropbox/Notes")
     (setq org-default-notes-file (concat org-directory "/2022-Work.org"))
     (setq org-capture-templates '(
-      ("w" "Work" entry (file+headline "~/Dropbox/Notes/2022-Work.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
-      ("h" "Home" entry (file+headline "~/Dropbox/Notes/2022-Home.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
-    ))
+                                  ("w" "Work" entry (file+headline "~/Dropbox/Notes/2022-Work.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
+                                  ("h" "Home" entry (file+headline "~/Dropbox/Notes/2022-Home.org" "Tasks") "* TODO %?\n SCHEDULED: %t\n")
+                                  ))
     (setq org-todo-keywords '(
-      (sequence "TODO(t)" "WIP(w)" "SUSPENDED(s)" "|" "HIBERNATED(h)" "DONE(d)")
-    ))
+                              (sequence "TODO(t)" "WIP(w)" "SUSPENDED(s)" "|" "HIBERNATED(h)" "DONE(d)")
+                              ))
     (setq org-todo-keyword-faces '(
-      ("TODO" . "red") ("WIP" . "orange") ("SUSPENDED" . "yellow") ("HIBERNATED" . "blue") ("DONE" . "green")
-    ))
+                                   ("TODO" . "red") ("WIP" . "orange") ("SUSPENDED" . "yellow") ("HIBERNATED" . "blue") ("DONE" . "green")
+                                   ))
     (setq org-lowest-priority ?D)
     (setq org-default-priority ?D)
     (setq org-refile-targets '(
-      (org-agenda-files :maxlevel . 1)
-    ))    
+                               (org-agenda-files :maxlevel . 1)
+                               ))    
     :custom
     (org-agenda-files "~/Dropbox/Notes/2022.agenda_files")
-  )
+    )
 
-   #+END_SRC
+#+END_SRC
 
 ** Bullets
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
-  (use-package org-bullets
-    :hook (
-      (org-mode . org-bullets-mode)
-    )
-  )
+  ;; (use-package org-bullets
+  ;;   :hook (
+  ;;          (org-mode . org-bullets-mode)
+  ;;          )
+  ;;   )
 
-   #+END_SRC
+#+END_SRC
 
 ** Reveal
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
   (use-package ox-reveal
     :config
     (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
     (use-package htmlize)
-  )
+    )
 
   (org-reload)
 
-   #+END_SRC
+#+END_SRC

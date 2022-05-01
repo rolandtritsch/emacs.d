@@ -1,5 +1,8 @@
 * Install/configure the haskell support
 
+*Note:* You need to install the [[https://github.com/haskell/haskell-language-server][haskell-language-server]] (and before
+that (obvioulsy) [[https://docs.haskellstack.org/en/stable/README/][stack]] and git).
+
 #+BEGIN_SRC emacs-lisp
 
   (use-package haskell-mode)
@@ -13,5 +16,3 @@
   )
 
 #+END_SRC
-
-Note: You need to install [[https://github.com/haskell/haskell-language-server][haskell-language-server]] (and before that (obvioulsy) [[https://docs.haskellstack.org/en/stable/README/][stack]] and git).

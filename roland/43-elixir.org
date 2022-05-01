@@ -1,84 +1,95 @@
-* Install/configure the support for elixir
+* Install/configure elixir
 
 ** First things first
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
-     (use-package elixir-mode)
-     (add-hook 'before-save-hook
-       (lambda ()
-         (when (eq major-mode 'elixir-mode)
-           (elixir-format))))
+  (use-package elixir-mode)
+  (add-hook 'before-save-hook
+            (lambda ()
+              (when (eq major-mode 'elixir-mode)
+                (elixir-format))))
 
-   #+END_SRC
+#+END_SRC
 
-** LSP
+** Make LSP work
 
-   #+BEGIN_SRC emacs-lisp
+*Note:* You also need to install [[https://github.com/elixir-lsp/elixir-ls][elixir_ls]]. You can do this by ...
 
-    (use-package lsp-mode
-      :commands lsp
-      :ensure t
-      :diminish lsp-mode
-      :hook (
-        (elixir-mode . lsp-deferred)
-      )
-      :init
-      (add-to-list 'exec-path "~/.local/bin/elixir_ls")
-   )
+- building/installing it from code =mix elixir_ls.release -o
+  ~/.local/bin/elixir_ls= (the =elxir_ls= dir needs to be on the path) or ...
+- use =M-x lsp-install-server= (needs unzip to be available) or ...
+- download/unzip a/the release (and put it into =~/.emacs.d/.cache/lsp=)
 
-   #+END_SRC
+#+BEGIN_SRC emacs-lisp
 
-   Note: You also need to install [[https://github.com/elixir-lsp/elixir-ls][elixir_ls]] ...
+  (use-package lsp-mode
+    :commands lsp
+    :ensure t
+    :diminish lsp-mode
+    :hook (
+           (elixir-mode . lsp-deferred)
+           )
+    :init
+    (add-to-list 'exec-path "~/.local/bin/elixir_ls")
+    )
 
-   - =mix elixir_ls.release -o ~/.local/bin/elixir_ls=
+#+END_SRC
 
 ** ExUnit
 
-   #+BEGIN_SRC emacs-lisp
+This will run =mix test= in all it's glorious variations.
 
-    (use-package exunit
-      :bind (
-        ("C-c C-u u" . 'exunit-verify-all)
-        ("C-c C-u f" . 'exunit-verify)
-        ("C-c C-u p" . 'exunit-verify-single)
-        ("C-c C-u r" . 'exunit-rerun)
-        ("C-c C-u t" . 'exunit-toggle-file-and-test)
-      )
-      :hook (
-        (after-save . my-exunit-after-save-hook)
-      )
-      :config
-      (defun my-exunit-after-save-hook ()
-        (when (eq major-mode 'elixir-mode)
-          (exunit-rerun)
+#+BEGIN_SRC emacs-lisp
+
+  (use-package exunit
+    :bind (
+           ("C-c C-u u" . 'exunit-verify-all)
+           ("C-c C-u f" . 'exunit-verify)
+           ("C-c C-u p" . 'exunit-verify-single)
+           ("C-c C-u r" . 'exunit-rerun)
+           ("C-c C-u t" . 'exunit-toggle-file-and-test)
+           )
+    :hook (
+           (after-save . my-exunit-after-save-hook)
+           )
+    :config
+    (defun my-exunit-after-save-hook ()
+      (when (eq major-mode 'elixir-mode)
+        (exunit-rerun)
         )
       )
     )
 
-   #+END_SRC
-** InfElixir
+#+END_SRC
 
-   #+BEGIN_SRC emacs-lisp
+** Inf-Elixir
 
-    (use-package inf-elixir
-      :load-path "packages/inf-elixir/"
-      :bind (
-        ("C-c C-l i i" . 'inf-elixir)
-        ("C-c C-l i p" . 'inf-elixir-project)
-        ("C-c C-l i l" . 'inf-elixir-send-line)
-        ("C-c C-l i r" . 'inf-elixir-send-region)
-        ("C-c C-l i b" . 'inf-elixir-send-buffer)
-      )
+This run =iex= in a buffer.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package inf-elixir
+    :load-path "packages/inf-elixir/"
+    :bind (
+           ("C-c C-l i i" . 'inf-elixir)
+           ("C-c C-l i p" . 'inf-elixir-project)
+           ("C-c C-l i l" . 'inf-elixir-send-line)
+           ("C-c C-l i r" . 'inf-elixir-send-region)
+           ("C-c C-l i b" . 'inf-elixir-send-buffer)
+           )
     )
 
-   #+END_SRC
+#+END_SRC
+
 ** Mix
 
-   #+BEGIN_SRC emacs-lisp
+Run mix tasks in a buffer. Use it with =M-x mix-execute-task=.
 
-    (use-package mix
-      :load-path "packages/mix.el/"
+#+BEGIN_SRC emacs-lisp
+
+  (use-package mix
+    :load-path "packages/mix.el/"
     )
 
-   #+END_SRC
+#+END_SRC

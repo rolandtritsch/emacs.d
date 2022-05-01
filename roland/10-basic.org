@@ -1,67 +1,69 @@
 * Basic stuff
 
-  This is the stuff that is =package-independent=. Basically configuring emacs itself.
+This is the stuff that is =package-independent=. Basically configuring emacs itself.
 
 ** General
-  - Get rid of screen clutter
-  - Get rid of tabs/whitespaces
-  - Make it look good
 
-   #+BEGIN_SRC emacs-lisp
+- Get rid of screen clutter
+- Get rid of tabs/whitespaces
+- Make it look good
 
-     (setq inhibit-startup-screen t)
-     (setq line-number-mode t)
-     (setq column-number-mode t)
-     (set-frame-font "firacode 14" nil t)
+#+BEGIN_SRC emacs-lisp
 
-     (scroll-bar-mode -1)
-     (tool-bar-mode -1)
-     (menu-bar-mode -1)
+  (setq inhibit-startup-screen t)
+  (setq line-number-mode t)
+  (setq column-number-mode t)
+  (set-frame-font "firacode 14" nil t)
 
-     (fset 'yes-or-no-p 'y-or-n-p)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
 
-     (setq-default indent-tabs-mode nil)
-     (setq-default tab-width 2)
-     (setq-default require-final-newline t)
-     (add-hook 'before-save-hook
-       (lambda ()
-         (unless (or
-           (eq major-mode 'fundamental-mode)
-           (eq major-mode 'makefile-gmake-mode))
-             (delete-trailing-whitespace))))
+  (fset 'yes-or-no-p 'y-or-n-p)
 
-     (global-unset-key (kbd "C-z"))
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
+  (setq-default require-final-newline t)
+  (add-hook 'before-save-hook
+            (lambda ()
+              (unless (or
+                       (eq major-mode 'fundamental-mode)
+                       (eq major-mode 'makefile-gmake-mode))
+                (delete-trailing-whitespace))))
 
-     (put 'dired-find-alternate-file 'disabled nil)
-     (setq dired-listing-switches "-Bhl  --group-directories-first")
+  (global-unset-key (kbd "C-z"))
 
-     (global-hl-line-mode 0)
-     (global-linum-mode 0)
+  (put 'dired-find-alternate-file 'disabled nil)
+  (setq dired-listing-switches "-Bhl  --group-directories-first")
 
-     (load-theme 'tango t)
-   #+END_SRC
+  (global-hl-line-mode 0)
+  (global-linum-mode 0)
+
+#+END_SRC
 
 ** Do backup files (but keep them out of the way)
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
-     (setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
-     (setq backup-by-copying t)
-     (setq delete-old-versions t)
-     (setq kept-new-versions 6)
-     (setq kept-old-versions 2)
-     (setq version-control t)
-     (setq create-lockfiles nil)
+  (setq backup-directory-alist '(("." . "~/.emacs.d.saves")))
+  (setq backup-by-copying t)
+  (setq delete-old-versions t)
+  (setq kept-new-versions 6)
+  (setq kept-old-versions 2)
+  (setq version-control t)
+  (setq create-lockfiles nil)
 
-   #+END_SRC
+#+END_SRC
 
 ** Switch on winner-mode (to go back (and forth) through the window layout history).
 
-   #+BEGIN_SRC emacs-lisp
+Use it with ==M-x winner-undo/-redo==.
 
-     (defalias 'list-buffers 'ibuffer)
-     ;;(defalias 'list-buffers 'ibuffer-other-window)
+#+BEGIN_SRC emacs-lisp
+  
+  (defalias 'list-buffers 'ibuffer)
+  ;;(defalias 'list-buffers 'ibuffer-other-window)
 
-     (winner-mode 1)
+  (winner-mode 1)
 
-   #+END_SRC
+#+END_SRC

@@ -1,25 +1,27 @@
 * Install/configure treemacs
 
+Allows to navigate directory trees.
+
 #+BEGIN_SRC emacs-lisp
 
   (use-package treemacs
     :bind (
-      ("C-x t t" . 'treemacs)
-      ("C-x t 1" . 'treemacs-select-window)
+           ("C-x t t" . 'treemacs)
+           ("C-x t 1" . 'treemacs-select-window)
+           )
     )
-  )
 
   (use-package treemacs-projectile
     :after treemacs projectile
-  )
+    )
 
   (use-package treemacs-icons-dired
     :after treemacs dired
     :config (treemacs-icons-dired-mode)
-  )
+    )
 
   (use-package treemacs-magit
     :after treemacs magit
-  )
+    )
 
 #+END_SRC

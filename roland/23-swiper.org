@@ -1,22 +1,28 @@
-* Install/configure swiper
+* Install/configure swiper/counsel
 
-Note: This =seems= to use consule and ivy (and ...). So it is this *or* =ido=. Do *not* install/configure both.
+Note: This =seems= to use counsel and ivy (and ...). So it is this
+*or* =ido=. Do *not* install/configure both.
+
+Counsel will allow you to do reg-ex searches when you look for a
+command with ==M-x==.
+
+Swiper is ==search-on-steroids== and shows all matching lines. 
 
 #+BEGIN_SRC emacs-lisp
 
-(use-package counsel)
+  (use-package counsel)
 
-(use-package swiper
-  :bind (
-    ("C-s" . 'swiper)
-    ("C-r" . 'swiper)
-    ("M-x" . 'counsel-M-x)
-    ("C-x C-f" . 'counsel-find-file)
-  )
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-display-style 'fancy)
-)
+  (use-package swiper
+    :bind (
+           ("C-s" . 'swiper)
+           ("C-r" . 'swiper)
+           ("M-x" . 'counsel-M-x)
+           ("C-x C-f" . 'counsel-find-file)
+           )
+    :config
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)
+    )
 
 #+END_SRC

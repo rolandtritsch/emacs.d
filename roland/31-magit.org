@@ -2,32 +2,36 @@
 
 Make git/magit/forge work.
 
+*Note:* (Obviously) For forge to work you need to put the
+==~/.authforge== file in place.
+
 #+BEGIN_SRC emacs-lisp
 
-(use-package magit
-  :bind (
-    ("C-x g" . 'magit-status)
-  )
-  :config
-  (setq magit-pull-or-fetch t)
-  (define-key magit-mode-map "f" 'magit-pull)
-  (define-key magit-mode-map "F" nil)
-  :custom
-  (magit-wip-mode t)
-  (magit-no-confirm (quote (safe-with-wip)))
-)
+  (use-package magit
+    :bind (
+           ("C-x g" . 'magit-status)
+           )
+    :config
+    (setq magit-pull-or-fetch t)
+    (define-key magit-mode-map "f" 'magit-pull)
+    (define-key magit-mode-map "F" nil)
+    :custom
+    (magit-wip-mode t)
+    (magit-no-confirm (quote (safe-with-wip)))
+    )
 
-(use-package forge
-  :after magit
-  :config
-  (setq auth-sources '("~/.authforge"))
-)
+  (use-package forge
+    :after magit
+    :config
+    (setq auth-sources '("~/.authforge"))
+    )
 
-(defun my-forge-post-submit-callback-kill-url (value _headers _status _req)
-  (when t
-    (when-let ((url (alist-get 'html_url value)))
-      (kill-new url))))
+  ;; copy the url to the PR into the CnP buffer (when/after creating a PR) 
+  (defun my-forge-post-submit-callback-kill-url (value _headers _status _req)
+    (when t
+      (when-let ((url (alist-get 'html_url value)))
+        (kill-new url))))
 
-(add-hook 'forge-post-submit-callback-hook 'my-forge-post-submit-callback-kill-url)
+  (add-hook 'forge-post-submit-callback-hook 'my-forge-post-submit-callback-kill-url)
 
 #+END_SRC

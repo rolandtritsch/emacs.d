@@ -1,77 +1,99 @@
 * Basic packages
 
-  Small packages to customize emacs itself.
+Small packages to customize emacs itself.
 
 ** Disable Mouse
 
-   #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 
-     (use-package disable-mouse)
-     (global-disable-mouse-mode)
+  (use-package disable-mouse)
+  (global-disable-mouse-mode)
 
-   #+END_SRC
+#+END_SRC
 
 ** Which Key
 
-   #+BEGIN_SRC emacs-lisp
+This is the popup at the bottom of the screen to show the available keys.
 
-     (use-package which-key
-       :config
-       (which-key-mode)
-     )
+#+BEGIN_SRC emacs-lisp
 
-   #+END_SRC
+  (use-package which-key
+    :config
+    (which-key-mode)
+    )
+
+#+END_SRC
 
 ** Ace Window
 
-   #+BEGIN_SRC emacs-lisp
+If there is more than two windows, ==ace== will show a number in the window
+and allow you to select to which window you want to go.
 
-     (use-package ace-window
-       :bind (
-         ("C-x o" . 'ace-window)
-       )
-       :config
-       (progn
-         (custom-set-faces
-           '(aw-leading-char-face
-             ((t (:inherit ace-jump-face-foreground :height 2.0)))
+#+BEGIN_SRC emacs-lisp
+
+  (use-package ace-window
+    :bind (
+           ("C-x o" . 'ace-window)
            )
+    :config
+    (progn
+      (custom-set-faces
+       '(aw-leading-char-face
+         ((t (:inherit ace-jump-face-foreground :height 2.0)))
          )
        )
-     )
+      )
+    )
 
-   #+END_SRC
+#+END_SRC
 
 ** Lorem Ipsum
 
-   #+BEGIN_SRC emacs-lisp
+Allows you to insert ramdom text in the buffer. Use it with ==M-x lorem-*==.
 
-     (use-package lorem-ipsum)
+#+BEGIN_SRC emacs-lisp
 
-   #+END_SRC
+  (use-package lorem-ipsum)
 
-** Solarized Theme
+#+END_SRC
 
-   #+BEGIN_SRC emacs-lisp
+** Theme
 
-     (use-package solarized-theme
-       :config
-       ;;(load-theme 'solarized-light t)
-     )
+#+BEGIN_SRC emacs-lisp
 
-   #+END_SRC
+  ;; (use-package solarized-theme
+  ;;   :config
+  ;;   (load-theme 'solarized-light t)
+  ;; )
+
+  ;; (use-package zenburn-theme
+  ;;   :config
+  ;;   (load-theme 'zenburn-light t)
+  ;; )
+
+  (load-theme 'tango t)
+
+#+END_SRC
+  
 ** Default Text Scale
 
-   #+BEGIN_SRC emacs-lisp
+Adjust the font-size in all windows. Very useful for presentations/demos.
+Use it with ==C-M-+/-==.
 
-     (use-package default-text-scale)
-     (default-text-scale-mode)
+#+BEGIN_SRC emacs-lisp
 
-   #+END_SRC
+  (use-package default-text-scale)
+  (default-text-scale-mode)
+
+#+END_SRC
+  
 ** Resize Windows
 
-   #+BEGIN_SRC emacs-lisp
+Use it with ==M-x windresize==. Afterwards you can use the cursor to
+resize the window.
 
-     (use-package windresize)
+#+BEGIN_SRC emacs-lisp
 
-   #+END_SRC
+  (use-package windresize)
+
+#+END_SRC

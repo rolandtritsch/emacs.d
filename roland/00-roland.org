@@ -1,50 +1,48 @@
-* Roland's Emacs config
+* Roland's emacs config
 
-Not a lot is happening here.
+Not a lot is happening here. Just loading a bunch of other org-files.
 
-Just loading a bunch of other org-files.
-
-* Basic config
+** Basic config
 
 #+BEGIN_SRC emacs-lisp
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/10-basic.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/11-use-package.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/10-basic.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/11-use-package.org"))
 
 #+END_SRC
 
-* General packages
+** General packages
 
 #+BEGIN_SRC emacs-lisp
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/20-general-packages.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/21-org-mode.org"))
-;;(org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/24-autoupdate.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/20-general-packages.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/21-org-mode.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
 
 #+END_SRC
 
-* General coding stuff
+** General coding stuff
 
 #+BEGIN_SRC emacs-lisp
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/30-general-coding.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/31-magit.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-plantuml.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/30-general-coding.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/31-magit.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-uml.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/34-pair.org"))
 
 #+END_SRC
 
-* Support for specific programming languages
+** Support for specific programming languages
 
 #+BEGIN_SRC emacs-lisp
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/40-elisp.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/41-haskell.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/42-scala.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/43-elixir.org"))
-(org-babel-load-file (expand-file-name "~/.emacs.d/roland/44-go.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/40-elisp.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/41-haskell.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/42-scala.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/43-elixir.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/44-go.org"))
 
 #+END_SRC
