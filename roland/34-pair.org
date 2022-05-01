@@ -1,0 +1,43 @@
+* Configure support for pair programming
+
+** Lockstep
+
+Start lockstep with ==M-x lockstep== (from two different emacsclients
+running on the same daemon on the same file/buffer).
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package lockstep
+    :load-path "packages/lockstep/"
+    )
+
+#+END_SRC
+
+** Togetherly
+
+Please read the [README](https://github.com/zk-phi/togetherly) to
+learn how to use this.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package togetherly
+    :load-path "packages/togetherly/"
+    )
+
+#+END_SRC
+
+** FlooBits
+
+Please read the [README](https://github.com/Floobits/floobits-emacs) to
+learn how to use this.
+
+*Note:* You need an account on floobits and you need to put in place
+an/the ==~/.floorc.json== file.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package floobits
+    :load-path "packages/floobits-emacs/"
+    )
+
+#+END_SRC

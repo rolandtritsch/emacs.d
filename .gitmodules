@@ -10,3 +10,9 @@
 [submodule "packages/inf-elixir"]
 	path = packages/inf-elixir
 	url = https://github.com/J3RN/inf-elixir.git
+[submodule "packages/togetherly"]
+	path = packages/togetherly
+	url = https://github.com/zk-phi/togetherly.git
+[submodule "packages/floobits-emacs"]
+	path = packages/floobits-emacs
+	url = https://github.com/Floobits/floobits-emacs.git
