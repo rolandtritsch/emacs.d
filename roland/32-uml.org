@@ -1,0 +1,54 @@
+* Install/configure UML support
+
+** Mermaid
+
+Allows to work with mermaid diagrams.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package mermaid-mode
+    :load-path "packages/mermaid-mode/"
+    :config
+    (setq mermaid-mode-map
+          (let ((map mermaid-mode-map))
+            (define-key map (kbd "C-c C-c") nil)
+            (define-key map (kbd "C-c C-f") nil)
+            (define-key map (kbd "C-c C-b") nil)
+            (define-key map (kbd "C-c C-r") nil)
+            (define-key map (kbd "C-c C-o") nil)
+            (define-key map (kbd "C-c C-d") nil)
+            (define-key map (kbd "C-c C-d c") 'mermaid-compile)
+            (define-key map (kbd "C-c C-d f") 'mermaid-compile-file)
+            (define-key map (kbd "C-c C-d b") 'mermaid-compile-buffer)
+            (define-key map (kbd "C-c C-d r") 'mermaid-compile-region)
+            (define-key map (kbd "C-c C-d o") 'mermaid-open-browser)
+            (define-key map (kbd "C-c C-d d") 'mermaid-open-doc)
+            map
+            )
+          )
+    )
+
+#+END_SRC
+
+** Plant-Uml
+
+Allows to work with plant-uml diagrams.
+
+*Note*: You need to manually install the ==plantuml.jar== file (see
+below).
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package plantuml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+  :custom
+  (plantuml-jar-path (expand-file-name "/.local/jars/plantuml.jar"))
+)
+
+(use-package flycheck-plantuml
+  :config
+  (flycheck-plantuml-setup)
+)
+
+#+END_SRC
