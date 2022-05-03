@@ -37,6 +37,7 @@ an/the ==~/.floorc.json== file.
 #+BEGIN_SRC emacs-lisp
 
   (use-package floobits
+    :requires 'facemenu
     :load-path "packages/floobits-emacs/"
     )
 
