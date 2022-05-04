@@ -26,7 +26,7 @@ This is the popup at the bottom of the screen to show the available keys.
 
 ** Ace Window
 
-If there is more than two windows, ==ace== will show a number in the window
+If there is more than two windows, =ace= will show a number in the window
 and allow you to select to which window you want to go.
 
 #+BEGIN_SRC emacs-lisp

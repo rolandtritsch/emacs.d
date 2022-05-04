@@ -34,7 +34,7 @@ Allows to work with mermaid diagrams.
 
 Allows to work with plant-uml diagrams.
 
-*Note*: You need to manually install the ==plantuml.jar== file (see
+*Note*: You need to manually install the =plantuml.jar= file (see
 below).
 
 #+BEGIN_SRC emacs-lisp

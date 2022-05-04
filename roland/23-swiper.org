@@ -4,9 +4,9 @@ Note: This =seems= to use counsel and ivy (and ...). So it is this
 *or* =ido=. Do *not* install/configure both.
 
 Counsel will allow you to do reg-ex searches when you look for a
-command with ==M-x==.
+command with =M-x=.
 
-Swiper is ==search-on-steroids== and shows all matching lines. 
+Swiper is =search-on-steroids= and shows all matching lines. 
 
 #+BEGIN_SRC emacs-lisp
 

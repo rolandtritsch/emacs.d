@@ -19,8 +19,8 @@
 
 ** Flycheck
 
-Enables flycheck. On the fly syntax checking (e.g. use ==M-x
-flycheck-list-errors== to see what's wrong in the current file).
+Enables flycheck. On the fly syntax checking (e.g. use =M-x
+flycheck-list-errors= to see what's wrong in the current file).
 
 #+BEGIN_SRC emacs-lisp
 

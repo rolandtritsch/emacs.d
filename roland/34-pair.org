@@ -2,7 +2,7 @@
 
 ** Lockstep
 
-Start lockstep with ==M-x lockstep== (from two different emacsclients
+Start lockstep with =M-x lockstep= (from two different emacsclients
 running on the same daemon on the same file/buffer).
 
 #+BEGIN_SRC emacs-lisp
@@ -15,8 +15,7 @@ running on the same daemon on the same file/buffer).
 
 ** Togetherly
 
-Please read the [README](https://github.com/zk-phi/togetherly) to
-learn how to use this.
+Please read the [[https://github.com/zk-phi/togetherly][README]] to learn how to use this.
 
 #+BEGIN_SRC emacs-lisp
 
@@ -28,11 +27,10 @@ learn how to use this.
 
 ** FlooBits
 
-Please read the [README](https://github.com/Floobits/floobits-emacs) to
-learn how to use this.
+Please read the [[https://github.com/Floobits/floobits-emacs][README]] to learn how to use this.
 
 *Note:* You need an account on floobits and you need to put in place
-an/the ==~/.floorc.json== file.
+an/the =~/.floorc.json= file.
 
 #+BEGIN_SRC emacs-lisp
 

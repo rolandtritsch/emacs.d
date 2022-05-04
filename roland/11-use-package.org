@@ -1,6 +1,6 @@
 * Install/configure package manager
 
-Configure package. Install/configure ==use-package==.
+Configure package. Install/configure =use-package=.
 
 #+BEGIN_SRC emacs-lisp
 

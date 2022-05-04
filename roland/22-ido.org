@@ -1,6 +1,8 @@
 * Configure ido
 
-This is not a package. I am =just= putting the configuration here so that I can comment it out easily in ~00-roland.org~ (and use =swiper= instead).
+This is not a package. I am =just= putting the configuration here so
+that I can comment it out easily in =00-roland.org= (and use =swiper=
+instead).
 
 #+BEGIN_SRC emacs-lisp
 

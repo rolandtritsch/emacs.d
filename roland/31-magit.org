@@ -3,7 +3,7 @@
 Make git/magit/forge work.
 
 *Note:* (Obviously) For forge to work you need to put the
-==~/.authforge== file in place.
+=~/.authforge= file in place.
 
 #+BEGIN_SRC emacs-lisp
 
