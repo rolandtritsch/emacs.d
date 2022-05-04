@@ -39,4 +39,7 @@ an/the =~/.floorc.json= file.
     :load-path "packages/floobits-emacs/"
     )
 
+  (require 'facemenu)
+  (require 'floobits)
+  
 #+END_SRC
