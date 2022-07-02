@@ -93,6 +93,10 @@ Enable projectile project management.
     (add-to-list 'projectile-globally-ignored-directories "_build")
     (add-to-list 'projectile-globally-ignored-directories "deps")
     (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
+    (add-to-list 'projectile-globally-ignored-directories "target")
+    (add-to-list 'projectile-globally-ignored-directories ".bloop")
+    (add-to-list 'projectile-globally-ignored-directories ".bsp")
+    (add-to-list 'projectile-globally-ignored-directories ".metals")
 
     (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
     (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
