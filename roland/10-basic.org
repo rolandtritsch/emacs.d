@@ -39,6 +39,9 @@ This is the stuff that is =package-independent=. Basically configuring emacs its
   (global-hl-line-mode 0)
   (global-linum-mode 0)
 
+  (setq split-width-threshold 0)
+  (setq split-height-threshold nil)
+
 #+END_SRC
 
 ** Do backup files (but keep them out of the way)
