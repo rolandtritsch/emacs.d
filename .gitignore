@@ -15,5 +15,6 @@ projectile.cache
 projectile-bookmarks.eld
 .dap-breakpoints
 forge-database.sqlite
+code-review-db-file.sqlite
 eln-cache
 .org-id-locations
