@@ -155,6 +155,9 @@ Make git/magit work.
 
   (use-package code-review
     :after forge
+    (setq code-review-auth-login-marker 'forge)
+    (setq code-review-fill-column 80)
+    (add-hook 'code-review-mode-hook #'emojify-mode)
   )
 
 #+END_SRC
