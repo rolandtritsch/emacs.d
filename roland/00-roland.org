@@ -28,7 +28,6 @@ Not a lot is happening here. Just loading a bunch of other org-files.
 #+BEGIN_SRC emacs-lisp
 
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/30-general-coding.org"))
-   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/31-magit.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-uml.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/34-pair.org"))
