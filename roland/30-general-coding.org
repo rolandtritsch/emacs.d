@@ -154,7 +154,11 @@ Make git/magit work.
 #+BEGIN_SRC emacs-lisp
 
   (use-package code-review
+    :bind (
+           ("C-c C-r" . 'code-review-forge-pr-at-point)
+           )
     :after forge
+    :config
     (setq code-review-auth-login-marker 'forge)
     (setq code-review-fill-column 80)
     (add-hook 'code-review-mode-hook #'emojify-mode)
