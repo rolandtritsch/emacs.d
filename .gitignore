@@ -18,3 +18,5 @@ forge-database.sqlite
 code-review-db-file.sqlite
 eln-cache
 .org-id-locations
+emojis/
+url/cache/
