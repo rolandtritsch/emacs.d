@@ -156,6 +156,7 @@ Make git/magit work.
   (use-package code-review
     :bind (
            ("C-c C-r" . 'code-review-forge-pr-at-point)
+           ("C-c C-x" . 'code-review-submit-comments)
            )
     :after forge
     :config
