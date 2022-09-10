@@ -42,6 +42,8 @@ This is the stuff that is =package-independent=. Basically configuring emacs its
   (setq split-width-threshold 80)
   (setq split-height-threshold nil)
 
+  (global-set-key (kbd "C-x !") 'rename-buffer)
+
 #+END_SRC
 
 ** Do backup files (but keep them out of the way)
