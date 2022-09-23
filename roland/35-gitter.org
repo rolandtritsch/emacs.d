@@ -1,8 +1,0 @@
-* Configure support for gitter
-
-#+BEGIN_SRC emacs-lisp
-
-  (use-package gitter
-    )
-
-#+END_SRC

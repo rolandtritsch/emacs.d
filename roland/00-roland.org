@@ -31,7 +31,7 @@ Not a lot is happening here. Just loading a bunch of other org-files.
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-uml.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/34-pair.org"))
-   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/35-gitter.org"))
+   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/35-chat.org"))
 
 #+END_SRC
 

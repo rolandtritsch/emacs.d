@@ -1,0 +1,19 @@
+* Configure support for development chat platforms
+
+** Gitter
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package gitter
+    )
+
+#+END_SRC
+
+** Matrix
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package ement
+    )
+
+#+END_SRC
