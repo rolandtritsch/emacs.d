@@ -2,8 +2,8 @@
 
 *Note:* You also need to install [[https://github.com/golang/tools/blob/master/gopls/README.md][gopls]] ...
 
-- =go get golang.org/x/tools/gopls@latest=
-- =ln -s ~/.asdf/installs/golang/1.14.3/packages/bin/gopls ~/.local/bin/gopls=
+- =go install golang.org/x/tools/gopls@latest=
+- =asdf reshim golang=
 
 #+BEGIN_SRC emacs-lisp
 
@@ -14,9 +14,9 @@
     :config
     (defun my-go-after-save-hook ()
       (when (eq major-mode 'go-mode)
+        (go-test-current-project)
         (if (string= (buffer-name) "main.go")
-            (go-run)
-          (go-test-current-project)
+          (go-run)
           )
         )
       )
