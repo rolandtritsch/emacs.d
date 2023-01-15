@@ -20,6 +20,7 @@ Not a lot is happening here. Just loading a bunch of other org-files.
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/26-mastodon.org"))
 
 #+END_SRC
 

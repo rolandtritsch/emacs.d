@@ -1,0 +1,12 @@
+* Configure mastodon
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package mastodon
+    :ensure t
+    :config
+    (setq mastodon-instance-url "https://mastodon.ie")
+    (setq mastodon-active-user "tedn")  
+  )
+
+#+END_SRC
