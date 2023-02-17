@@ -1,0 +1,10 @@
+* Install/configure support for Python
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package elpy
+    :ensure t
+    :init
+    (elpy-enable))
+
+#+END_SRC

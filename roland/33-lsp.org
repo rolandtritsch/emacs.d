@@ -3,14 +3,14 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package lsp-mode
-    :commands (lsp lsp-defered)
     :init
-    (setq lsp-prefer-flymake nil)
     (setq lsp-keymap-prefix "C-c C-l")
     :hook (
-           (before-save . lsp-format-buffer)
-           (before-save . lsp-organize-imports)
-           )
+            (before-save . lsp-format-buffer)
+            (before-save . lsp-organize-imports)
+            (prog-mode . lsp)
+      )
+    :commands (lsp lsp-defered)
     :config
     (setq lsp-auto-configure t)
     (setq lsp-before-save-edits t)
@@ -23,6 +23,7 @@
     (setq lsp-modeline-code-actions-enable t)
     (setq lsp-modeline-code-actions-segments '(count icon name))
     (setq lsp-modeline-diagnostics-enable t)
+    (setq lsp-prefer-flymake nil)
     )
 
   (use-package lsp-ui

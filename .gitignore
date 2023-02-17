@@ -22,3 +22,5 @@ emojis/
 url/cache/
 code-review-error.log
 mastodon.plstore
+elpy/
+persist/
