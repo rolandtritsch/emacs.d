@@ -5,6 +5,8 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package gitter
+    :config
+    (setq  gitter-token "b2d95438760a146ca94b56af1adee98bee2759ba")
     )
 
 #+END_SRC
