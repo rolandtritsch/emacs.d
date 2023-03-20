@@ -130,15 +130,13 @@ Make git/magit work.
 ** Forge
 
 *Note:* (Obviously) For forge to work you need to put the
-=~/.authforge= file in place.
+=~/.authinfo= or =~/.netrc= file in place.
 
 #+BEGIN_SRC emacs-lisp
 
   (use-package forge
     :after magit
-    :config
-    (setq auth-sources '("~/.authforge"))
-    )
+  )
 
   ;; copy the url to the PR into the CnP buffer (when/after creating a PR) 
   (defun my-forge-post-submit-callback-kill-url (value _headers _status _req)
@@ -168,12 +166,3 @@ Make git/magit work.
 
 #+END_SRC
 
-** Ansi Colors
-
-#+BEGIN_SRC emacs-lisp
-
-  (use-package ansi-color
-    :ensure t
-    :hook (compilation-filter . ansi-color-compilation-filter)) 
-
-#+END_SRC
