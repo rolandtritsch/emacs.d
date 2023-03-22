@@ -1,0 +1,53 @@
+* Install/configure support for TypeScript
+
+** Syntax-Highlighting
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package typescript-mode
+    :ensure t
+    )
+
+#+END_SRC
+
+** Auto-Complete
+
+Use [[./30-general-coding.org][Company]].
+
+** On the fly error reporting
+
+Use [[./30-general-coding.org][FlyCheck]].
+
+** Setup linter
+
+Make sure we can find the linter.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package add-node-modules-path
+    :ensure t
+    :hook (
+      (typescript-mode . add-node-modules-path)
+      )
+    )
+
+#+END_SRC
+
+** TypeScript Interactive Development Environment for Emacs
+
+#+BEGIN_SRC emacs-lisp
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook (
+    (typescript-mode . tide-setup)
+    (typescript-mode . tide-hl-identifier-mode)
+    (before-save . tide-format-before-save)
+    )
+  :config
+  (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
+)
+
+#+END_SRC
+

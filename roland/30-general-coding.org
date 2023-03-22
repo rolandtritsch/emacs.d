@@ -25,10 +25,13 @@ flycheck-list-errors= to see what's wrong in the current file).
 #+BEGIN_SRC emacs-lisp
 
   (use-package flycheck
+    :ensure t
+    :hook (
+      (after-init . global-flycheck-mode)
+      )
     :config
     (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
     (setq flycheck-markdown-markdownlint-cli-config ".markdownlint.json")
-    (global-flycheck-mode)
     )
 
 #+END_SRC
@@ -40,8 +43,10 @@ Enables company. At cursor auto-completion (with pop-up).
 #+BEGIN_SRC emacs-lisp
 
   (use-package company
-    :config
-    (global-company-mode)
+    :ensure t
+    :hook (
+      (after-init . global-company-mode)
+      )
     )
 
 #+END_SRC
