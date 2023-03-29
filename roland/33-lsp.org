@@ -13,6 +13,7 @@
     :commands (lsp lsp-defered)
     :config
     (setq lsp-auto-configure t)
+    (setq lsp-auto-guess-root t)
     (setq lsp-before-save-edits t)
     (setq lsp-completion-enable t)
     (setq lsp-enable-indentation t)

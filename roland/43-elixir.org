@@ -5,10 +5,6 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package elixir-mode)
-  (add-hook 'before-save-hook
-            (lambda ()
-              (when (eq major-mode 'elixir-mode)
-                (elixir-format))))
 
 #+END_SRC
 
@@ -28,10 +24,8 @@
     :ensure t
     :diminish lsp-mode
     :hook (
-           (elixir-mode . lsp-deferred)
-           )
-    :init
-    (add-to-list 'exec-path "~/.local/bin/elixir_ls")
+            (elixir-mode . lsp-deferred)
+          )
     )
 
 #+END_SRC
