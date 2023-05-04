@@ -23,7 +23,7 @@ This is the stuff that is =package-independent=. Basically configuring emacs its
 
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
-  (setq-default require-final-newline t)
+  (setq-default require-final-newline 'visit)
   (add-hook 'before-save-hook
             (lambda ()
               (unless (or
@@ -34,7 +34,7 @@ This is the stuff that is =package-independent=. Basically configuring emacs its
   (global-unset-key (kbd "C-z"))
 
   (put 'dired-find-alternate-file 'disabled nil)
-  (setq dired-listing-switches "-Bhl  --group-directories-first")
+  (setq dired-listing-switches " -lv --human-readable --group-directories-first --almost-all")
 
   (global-hl-line-mode 0)
   (global-linum-mode 0)
