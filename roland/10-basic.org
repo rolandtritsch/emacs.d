@@ -1,6 +1,7 @@
 * Basic stuff
 
-This is the stuff that is =package-independent=. Basically configuring emacs itself.
+This is the stuff that is =package-independent=.
+Basically configuring emacs itself.
 
 ** General
 

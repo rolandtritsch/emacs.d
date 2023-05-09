@@ -97,3 +97,13 @@ resize the window.
   (use-package windresize)
 
 #+END_SRC
+
+** Transpose Windows
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package transpose-frame)
+
+#+END_SRC
+
+
