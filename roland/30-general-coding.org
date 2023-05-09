@@ -26,9 +26,8 @@ flycheck-list-errors= to see what's wrong in the current file).
 
   (use-package flycheck
     :ensure t
-    :hook (
-      (after-init . global-flycheck-mode)
-      )
+    :init
+    (global-flycheck-mode)
     :config
     (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
     (setq flycheck-markdown-markdownlint-cli-config ".markdownlint.json")

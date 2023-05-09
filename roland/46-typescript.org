@@ -32,6 +32,10 @@ Make sure we can find the linter.
     :hook (
       (typescript-mode . add-node-modules-path)
       )
+    :config
+    (setq add-node-modules-path-debug nil)
+    :custom
+    (add-node-modules-path-command '("echo \"$(npm root)/.bin\""))
     )
 
 #+END_SRC
