@@ -6,7 +6,15 @@
     :ensure t
     :config
     (setq python-check-command "flake8 --color=never")
+    :custom
+    (elpy-test-runner 'elpy-test-pytest-runner)
     :init
     (elpy-enable))
+
+  (use-package python-isort
+    :ensure t
+    :after (elpy)
+    :hook
+    (python-mode . 'python-isort-on-save-mode))
 
 #+END_SRC
