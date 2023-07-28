@@ -44,17 +44,23 @@ Make sure we can find the linter.
 
 #+BEGIN_SRC emacs-lisp
 
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :hook (
-    (typescript-mode . tide-setup)
-    (typescript-mode . tide-hl-identifier-mode)
-    (before-save . tide-format-before-save)
-    )
-  :config
-  (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
-)
+  (use-package tide
+    :ensure t
+    :after (typescript-mode company flycheck)
+    :preface
+    (defun flycheck-set-checker()
+      (setq flycheck-checker 'typescript-tide)
+      )
+    :hook (
+      (typescript-mode . tide-setup)
+      (typescript-mode . tide-hl-identifier-mode)
+      (typescript-mode . flycheck-set-checker)
+      (before-save . tide-format-before-save)
+      )
+    :config
+    (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
+    (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t))
+  )
 
 #+END_SRC
 
