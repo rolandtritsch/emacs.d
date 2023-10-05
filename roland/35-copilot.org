@@ -1,0 +1,20 @@
+* Configure support for copilot
+ 
+#+BEGIN_SRC emacs-lisp
+
+  (use-package s)
+  (use-package dash)
+  (use-package editorconfig)
+
+  (use-package copilot
+    :after (s dash editorconfig)
+    :load-path "packages/copilot.el/"
+    :bind (
+      :map prog-mode-map
+      ("C-c M-c m" . copilot-mode)
+      ("C-c M-c n" . copilot-next-completion)
+      ("C-c M-c a" . copilot-accept-completion)
+    )
+  )
+
+#+END_SRC
