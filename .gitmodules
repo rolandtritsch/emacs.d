@@ -16,3 +16,6 @@
 [submodule "packages/floobits-emacs"]
 	path = packages/floobits-emacs
 	url = https://github.com/Floobits/floobits-emacs.git
+[submodule "packages/copilot.el"]
+	path = packages/copilot.el
+	url = https://github.com/zerolfx/copilot.el
