@@ -2,6 +2,8 @@
 
 Configure package. Install/configure =use-package=.
 
+Based on this [[https://ianyepan.github.io/posts/setting-up-use-package/][tutorial]].
+
 #+BEGIN_SRC emacs-lisp
 
   (require 'package)
