@@ -1,5 +1,5 @@
-* Configure support for copilot
- 
+* Configure support for CoPilot
+
 #+BEGIN_SRC emacs-lisp
 
   (use-package s)
