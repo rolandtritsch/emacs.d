@@ -37,8 +37,8 @@ Basically configuring emacs itself.
   (put 'dired-find-alternate-file 'disabled nil)
   (setq dired-listing-switches " -lv --human-readable --group-directories-first --almost-all")
 
+  (global-display-line-numbers-mode 0)
   (global-hl-line-mode 0)
-  (global-linum-mode 0)
 
   (setq split-width-threshold 80)
   (setq split-height-threshold nil)
@@ -66,7 +66,7 @@ Basically configuring emacs itself.
 Use it with ==M-x winner-undo/-redo==.
 
 #+BEGIN_SRC emacs-lisp
-  
+
   (defalias 'list-buffers 'ibuffer)
   ;;(defalias 'list-buffers 'ibuffer-other-window)
 
