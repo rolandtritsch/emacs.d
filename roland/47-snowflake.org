@@ -1,0 +1,8 @@
+* Configure support for SnowFlake
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package flymake-sqlfluff
+  :ensure t)
+
+#+END_SRC
