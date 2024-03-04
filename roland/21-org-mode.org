@@ -62,3 +62,34 @@
   (org-reload)
 
 #+END_SRC
+
+** Org-Roam
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package org-roam
+    :ensure t
+    :bind (
+           ("C-c r c" . 'org-roam-capture)
+           ("C-c r b t" . 'org-roam-buffer-toggle)
+           ("C-c r n f" . 'org-roam-node-find)
+           ("C-c r n i" . 'org-roam-node-insert)
+           )    
+    :custom
+    (org-roam-directory "~/Dropbox/Notes/Roam")
+    (org-roam-dailies-directory "./Daily")
+    (org-roam-mode-sections (list
+      'org-roam-backlinks-section
+      'org-roam-reflinks-section
+      'org-roam-unlinked-references-section
+      ))
+    (org-roam-capture-templates '(
+      ("d" "default" plain "%?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n") :unnarrowed t)
+      ("t" "thought" plain "- %?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :thought:\n") :unnarrowed t)
+      ("b" "book" plain "\n* Source\n\n- Author: %^{Author}\n- Title: ${title}\n- Year: %^{Year}\n\n* Summary\n\n- %?" :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :book:\n") :unnarrowed t)
+      ))
+    :config
+    (org-roam-db-autosync-mode)
+    )
+
+#+END_SRC

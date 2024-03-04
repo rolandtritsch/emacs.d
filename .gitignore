@@ -25,3 +25,4 @@ mastodon.plstore
 elpy/
 persist/
 projects
+org-roam.db
