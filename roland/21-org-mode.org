@@ -93,3 +93,44 @@
     )
 
 #+END_SRC
+
+** Yank-Media
+
+Let's make the (new) `yank-media` command [[https://github.com/NapoleonWils0n/cerberus/blob/master/emacs/yank-media.org][work]] for `org-mode`.
+
+#+BEGIN_SRC emacs-lisp
+
+  (with-eval-after-load 'org
+    (setq yank-media--registered-handlers
+      '(("image/.*" . #'org-mode--image-yank-handler))))
+
+  (yank-media-handler "image/.*" #'org-mode--image-yank-handler)
+
+  (defun org-mode--image-yank-handler (type image)
+    (let ((file (read-file-name (format "Save %s image to: " type))))
+      (when (file-directory-p file)
+        (user-error "%s is a directory"))
+      (when (and (file-exists-p file)
+          (not (yes-or-no-p (format "%s exists; overwrite?" file))))
+        (user-error "%s exists"))
+       (with-temp-buffer
+         (set-buffer-multibyte nil)
+         (insert image)
+         (write-region (point-min) (point-max) file))
+         (insert (format "[[file:%s]]\n" (file-relative-name file)))))
+
+#+END_SRC
+
+** [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-ditaa.html][Ditaa]]
+
+Note: You need to download/install the [[https://ditaa.sourceforge.net/][ditaa]] jar first (into ~./.local/bin~).
+
+#+BEGIN_SRC emacs-lisp
+
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((ditaa . t))) 
+
+  (setq org-ditaa-jar-path "~/.local/bin/ditaa0_9.jar")
+
+#+END_SRC
