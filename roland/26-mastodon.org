@@ -9,4 +9,10 @@
     (setq mastodon-active-user "tedn")  
   )
 
+  (use-package mastodon-alt
+    :load-path "packages/mastodon-alt/"
+    :config
+    (mastodon-alt-tl-activate)
+  )
+
 #+END_SRC

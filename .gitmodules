@@ -19,3 +19,6 @@
 [submodule "packages/copilot.el"]
 	path = packages/copilot.el
 	url = https://github.com/zerolfx/copilot.el
+[submodule "packages/mastodon-alt"]
+	path = packages/mastodon-alt
+	url = https://github.com/rougier/mastodon-alt
