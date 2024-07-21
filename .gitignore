@@ -26,3 +26,4 @@ roland/*.el
 session.*
 transient/
 url/cache/
+eshell/

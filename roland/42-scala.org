@@ -31,4 +31,8 @@
 
   (use-package lsp-metals)
 
+  (use-package scala-cli-repl
+    :load-path "packages/scala-cli-repl/"
+  )
+
 #+END_SRC
