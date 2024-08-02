@@ -1,0 +1,15 @@
+* Configure support for large-language models (LLMs)
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package gptel
+    :ensure t
+    :config
+    (gptel-make-gpt4all "GPT4All-llama3.1"
+      :protocol "http"
+      :host "localhost:4891"
+      :models '("Meta-Llama-3.1-8B-Instruct-128k-Q4_0.gguf")
+      )
+    )
+
+#+END_SRC
