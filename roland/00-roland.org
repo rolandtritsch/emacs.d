@@ -19,7 +19,7 @@ Not a lot is happening here. Just loading a bunch of other org-files.
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/21-org-mode.org"))
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/22-ido.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/23-swiper.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/25-treemacs.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/26-mastodon.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/27.llm.org"))
 
@@ -30,10 +30,10 @@ Not a lot is happening here. Just loading a bunch of other org-files.
 #+BEGIN_SRC emacs-lisp
 
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/30-general-coding.org"))
-   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-uml.org"))
+   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/32-uml.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/33-lsp.org"))
-   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/34-pair.org"))
-   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/35-chat.org"))
+   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/34-pair.org"))
+   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/35-chat.org"))
    (org-babel-load-file (expand-file-name "~/.emacs.d/roland/36-copilot.org"))
 
 #+END_SRC
@@ -45,10 +45,10 @@ Not a lot is happening here. Just loading a bunch of other org-files.
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/40-elisp.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/41-haskell.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/42-scala.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/43-elixir.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/44-go.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/43-elixir.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/44-go.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/45-python.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/46-typescript.org"))
-  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/47-snowflake.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/46-typescript.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/47-snowflake.org"))
 
 #+END_SRC
