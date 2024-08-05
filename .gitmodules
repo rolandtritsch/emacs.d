@@ -22,3 +22,6 @@
 [submodule "packages/scala-cli-repl"]
 	path = packages/scala-cli-repl
 	url = https://github.com/ag91/scala-cli-repl.git
+[submodule "packages/copilot.el"]
+	path = packages/copilot.el
+	url = https://github.com/copilot-emacs/copilot.el.git
