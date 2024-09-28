@@ -4,16 +4,16 @@
 
 #+BEGIN_SRC emacs-lisp
 
-  (use-package protobuf-mode)
+  ;; (use-package protobuf-mode)
   (use-package json-mode)
   (use-package yaml-mode)
   (use-package markdown-mode)
   (use-package markdown-toc)
-  (use-package edit-indirect)
-  (use-package makefile-executor
-    :config
-    (add-hook 'makefile-mode-hook 'makefile-executor-mode)
-    )
+  ;; (use-package edit-indirect)
+  ;; (use-package makefile-executor
+  ;;   :config
+  ;;   (add-hook 'makefile-mode-hook 'makefile-executor-mode)
+  ;;   )
 
 #+END_SRC
 
@@ -56,15 +56,15 @@ Enables (code) snippets.
 
 #+BEGIN_SRC emacs-lisp
 
-  (use-package yasnippet
-    :bind (
-           ("C-c C-y e" . 'yas-expand)
-           )
-    :config
-    (yas-global-mode)
-    )
+  ;; (use-package yasnippet
+  ;;   :bind (
+  ;;          ("C-c C-y e" . 'yas-expand)
+  ;;          )
+  ;;   :config
+  ;;   (yas-global-mode)
+  ;;   )
 
-  (use-package yasnippet-snippets)
+  ;; (use-package yasnippet-snippets)
 
 #+END_SRC
 
@@ -74,15 +74,15 @@ Folding code (based on indention).
 
 #+BEGIN_SRC emacs-lisp
 
-  (use-package yafolding
-    :bind (
-           ("C-c C-y t a" . 'yafolding-toggle-all)
-           ("C-c C-y t e" . 'yafolding-toggle-element)
-           )
-    :hook (
-           (prog-mode . yafolding-mode)
-           )
-    )
+  ;; (use-package yafolding
+  ;;   :bind (
+  ;;          ("C-c C-y t a" . 'yafolding-toggle-all)
+  ;;          ("C-c C-y t e" . 'yafolding-toggle-element)
+  ;;          )
+  ;;   :hook (
+  ;;          (prog-mode . yafolding-mode)
+  ;;          )
+  ;;   )
 
 #+END_SRC
 
@@ -92,21 +92,21 @@ Enable projectile project management.
 
 #+BEGIN_SRC emacs-lisp
 
-  (use-package projectile
-    :config
-    (add-to-list 'projectile-globally-ignored-directories "_build")
-    (add-to-list 'projectile-globally-ignored-directories "deps")
-    (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
-    (add-to-list 'projectile-globally-ignored-directories "target")
-    (add-to-list 'projectile-globally-ignored-directories ".bloop")
-    (add-to-list 'projectile-globally-ignored-directories ".bsp")
-    (add-to-list 'projectile-globally-ignored-directories ".metals")
+  ;; (use-package projectile
+  ;;   :config
+  ;;   (add-to-list 'projectile-globally-ignored-directories "_build")
+  ;;   (add-to-list 'projectile-globally-ignored-directories "deps")
+  ;;   (add-to-list 'projectile-globally-ignored-directories ".elixir_ls")
+  ;;   (add-to-list 'projectile-globally-ignored-directories "target")
+  ;;   (add-to-list 'projectile-globally-ignored-directories ".bloop")
+  ;;   (add-to-list 'projectile-globally-ignored-directories ".bsp")
+  ;;   (add-to-list 'projectile-globally-ignored-directories ".metals")
 
-    (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
-    (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
-    :init
-    (projectile-mode)
-    )
+  ;;   (setq projectile-project-search-path '("~/Development/Work/" "~/Development/Home/"))
+  ;;   (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+  ;;   :init
+  ;;   (projectile-mode)
+  ;;   )
 
 #+END_SRC
 
