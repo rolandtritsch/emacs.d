@@ -43,7 +43,7 @@ Basically configuring emacs itself.
   (setq split-width-threshold 80)
   (setq split-height-threshold nil)
 
-  (global-set-key (kbd "C-x !") 'rename-buffer)
+  ;; (global-set-key (kbd "C-x !") 'rename-buffer)
 
 #+END_SRC
 
@@ -67,9 +67,9 @@ Use it with ==M-x winner-undo/-redo==.
 
 #+BEGIN_SRC emacs-lisp
 
-  (defalias 'list-buffers 'ibuffer)
-  ;;(defalias 'list-buffers 'ibuffer-other-window)
+  ;; (defalias 'list-buffers 'ibuffer)
+  ;; (defalias 'list-buffers 'ibuffer-other-window)
 
-  (winner-mode 1)
+  ;; (winner-mode 1)
 
 #+END_SRC
