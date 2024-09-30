@@ -117,9 +117,10 @@ Make git/magit work.
 #+BEGIN_SRC emacs-lisp
 
   (use-package magit
-    :bind (
-           ("C-x g" . 'magit-status)
-           )
+    ;; :bind (
+    ;;        ("C-x g" . 'magit-status)
+    ;;        )
+    ;;
     :config
     (setq magit-pull-or-fetch t)
     (define-key magit-mode-map "f" 'magit-pull)
@@ -157,10 +158,10 @@ Make git/magit work.
 #+BEGIN_SRC emacs-lisp
 
   (use-package code-review
-    :bind (
-           ("C-c C-r" . 'code-review-forge-pr-at-point)
-           ("C-c C-x" . 'code-review-submit-comments)
-           )
+    ;; :bind (
+    ;;        ("C-c C-r" . 'code-review-forge-pr-at-point)
+    ;;        ("C-c C-x" . 'code-review-submit-comments)
+    ;;        )
     :after forge
     :config
     (setq code-review-auth-login-marker 'forge)
