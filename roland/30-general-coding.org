@@ -126,7 +126,7 @@ Make git/magit work.
     (define-key magit-mode-map "f" 'magit-pull)
     (define-key magit-mode-map "F" nil)
     :custom
-    (magit-wip-mode t)
+    ;; (magit-wip-mode t)
     (magit-no-confirm (quote (safe-with-wip)))
     )
 
