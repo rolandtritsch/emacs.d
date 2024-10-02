@@ -159,18 +159,21 @@ Make git/magit work.
 
 ** Code Review
 
+*Not* using this for now (because of the warnings, while loading).
+
 #+BEGIN_SRC emacs-lisp
 
-  (use-package code-review
-    ;; :bind (
-    ;;        ("C-c C-r" . 'code-review-forge-pr-at-point)
-    ;;        ("C-c C-x" . 'code-review-submit-comments)
-    ;;        )
-    :after forge
-    :config
-    (setq code-review-auth-login-marker 'forge)
-    (setq code-review-fill-column 80)
-    (add-hook 'code-review-mode-hook #'emojify-mode)
-  )
+  ;; (use-package code-review
+  ;;   :bind (
+  ;;          :map prog-mode-map
+  ;;          ("C-z r f" . 'code-review-forge-pr-at-point)
+  ;;          ("C-z r s" . 'code-review-submit-comments)
+  ;;          )
+  ;;   :after forge
+  ;;   :config
+  ;;   (setq code-review-auth-login-marker 'forge)
+  ;;   (setq code-review-fill-column 80)
+  ;;   (add-hook 'code-review-mode-hook #'emojify-mode)
+  ;; )
 
 #+END_SRC
