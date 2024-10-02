@@ -4,7 +4,7 @@
 
   (use-package lsp-mode
     :init
-    (setq lsp-keymap-prefix "C-c C-l")
+    (setq lsp-keymap-prefix "C-z l")
     :hook (
             (before-save . lsp-format-buffer)
             (before-save . lsp-organize-imports)

@@ -3,7 +3,6 @@
 #+BEGIN_SRC emacs-lisp
 
     (use-package gptel
-      :ensure t
       :config
       (gptel-make-gpt4all "GPT4All:llama-3.1"
         :stream t

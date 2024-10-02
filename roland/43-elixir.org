@@ -38,11 +38,12 @@ This will run =mix test= in all it's glorious variations.
 
   (use-package exunit
     :bind (
-           ("C-c C-u u" . 'exunit-verify-all)
-           ("C-c C-u f" . 'exunit-verify)
-           ("C-c C-u p" . 'exunit-verify-single)
-           ("C-c C-u r" . 'exunit-rerun)
-           ("C-c C-u t" . 'exunit-toggle-file-and-test)
+           :map prog-mode-map
+           ("C-z e u u" . 'exunit-verify-all)
+           ("C-z e u f" . 'exunit-verify)
+           ("C-z e u p" . 'exunit-verify-single)
+           ("C-z e u r" . 'exunit-rerun)
+           ("C-z e u t" . 'exunit-toggle-file-and-test)
            )
     :hook (
            (after-save . my-exunit-after-save-hook)
@@ -66,11 +67,12 @@ This run =iex= in a buffer.
   (use-package inf-elixir
     :load-path "packages/inf-elixir/"
     :bind (
-           ("C-c C-l i i" . 'inf-elixir)
-           ("C-c C-l i p" . 'inf-elixir-project)
-           ("C-c C-l i l" . 'inf-elixir-send-line)
-           ("C-c C-l i r" . 'inf-elixir-send-region)
-           ("C-c C-l i b" . 'inf-elixir-send-buffer)
+           :map prog-mode-map
+           ("C-z e i i" . 'inf-elixir)
+           ("C-z e i p" . 'inf-elixir-project)
+           ("C-z e i l" . 'inf-elixir-send-line)
+           ("C-z e i r" . 'inf-elixir-send-region)
+           ("C-z e i b" . 'inf-elixir-send-buffer)
            )
     )
 
