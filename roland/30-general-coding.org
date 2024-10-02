@@ -25,9 +25,8 @@ flycheck-list-errors= to see what's wrong in the current file).
 #+BEGIN_SRC emacs-lisp
 
   (use-package flycheck
-    :ensure t
     :init
-    (global-flycheck-mode)
+    ;; (global-flycheck-mode)
     :config
     (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
     (setq flycheck-markdown-markdownlint-cli-config ".markdownlint.json")
@@ -42,7 +41,6 @@ Enables company. At cursor auto-completion (with pop-up).
 #+BEGIN_SRC emacs-lisp
 
   (use-package company
-    :ensure t
     :hook (
       (after-init . global-company-mode)
       )
@@ -53,6 +51,8 @@ Enables company. At cursor auto-completion (with pop-up).
 ** YasSnippet
 
 Enables (code) snippets.
+
+*Not* using this for now.
 
 #+BEGIN_SRC emacs-lisp
 
@@ -72,6 +72,8 @@ Enables (code) snippets.
 
 Folding code (based on indention).
 
+*Not* using this for now.
+
 #+BEGIN_SRC emacs-lisp
 
   ;; (use-package yafolding
@@ -89,6 +91,8 @@ Folding code (based on indention).
 ** Projectile
 
 Enable projectile project management.
+
+*Not* using this for now.
 
 #+BEGIN_SRC emacs-lisp
 
@@ -117,10 +121,9 @@ Make git/magit work.
 #+BEGIN_SRC emacs-lisp
 
   (use-package magit
-    ;; :bind (
-    ;;        ("C-x g" . 'magit-status)
-    ;;        )
-    ;;
+    :bind (
+           ("C-z m s" . 'magit-status)
+           )
     :config
     (setq magit-pull-or-fetch t)
     (define-key magit-mode-map "f" 'magit-pull)
@@ -171,4 +174,3 @@ Make git/magit work.
   )
 
 #+END_SRC
-
