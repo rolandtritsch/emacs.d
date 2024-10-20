@@ -14,6 +14,8 @@
            ("C-z c m" . copilot-mode)
            ("C-z c n" . copilot-next-completion)
            ("C-z c a" . copilot-accept-completion)
+           ("C-<iso-lefttab>" . copilot-next-completion)
+           ("C-<tab>" . copilot-accept-completion)
            )
     )
 
