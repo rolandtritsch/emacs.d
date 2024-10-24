@@ -8,6 +8,7 @@ auto-save-list/
 bookmarks
 code-review-db-file.sqlite
 code-review-error.log
+codeium/
 eln-cache
 elpa/
 elpy/
@@ -25,5 +26,6 @@ projects
 roland/*.el
 session.*
 transient/
+tramp
 url/cache/
 eshell/
