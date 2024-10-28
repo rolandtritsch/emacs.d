@@ -44,9 +44,9 @@ Enables company. At cursor auto-completion (with pop-up).
     :defer 0.1
     :config
     (global-company-mode t)
-    (setq-default company-idle-delay 0.05)
+    (setq-default company-idle-delay 0.1)
     (setq-default company-require-match nil)
-    (setq-default company-minimum-prefix-length 0)
+    (setq-default company-minimum-prefix-length 3)
 
     ;; get only preview
     ;; (setq-default company-frontends '(company-preview-frontend))
