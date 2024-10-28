@@ -142,3 +142,16 @@ Note: You need to download/install the [[https://ditaa.sourceforge.net/][ditaa]]
   ;; (setq org-ditaa-jar-path "~/.local/bin/ditaa0_9.jar")
 
 #+END_SRC
+
+** Download
+
+Allows to paste images into an org-mode buffer.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package org-download
+    :config
+    (setq-default org-download-image-dir "./Images")
+    )
+
+#+END_SRC
