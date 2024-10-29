@@ -185,3 +185,11 @@ Make git/magit work.
   ;; )
 
 #+END_SRC
+
+** (Better) Terminal/Shell
+
+#+BEGIN_SRC emacs-lisp
+  (use-package vterm
+    )
+#+END_SRC
+
