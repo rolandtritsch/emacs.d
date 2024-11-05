@@ -24,4 +24,6 @@ Based on this [[https://ianyepan.github.io/posts/setting-up-use-package/][tutori
           use-package-expand-minimally t
           package-archive-priorities '(("melpa" . 1))))
 
+  (require 'use-package)
+
 #+END_SRC

@@ -53,7 +53,7 @@ Allows you to insert ramdom text in the buffer. Use it with ==M-x lorem-*==.
 
 #+BEGIN_SRC emacs-lisp
 
-  (use-package lorem-ipsum)
+   (use-package lorem-ipsum)
 
 #+END_SRC
 
@@ -74,7 +74,7 @@ Allows you to insert ramdom text in the buffer. Use it with ==M-x lorem-*==.
   (load-theme 'tango t)
 
 #+END_SRC
-  
+
 ** Default Text Scale
 
 Adjust the font-size in all windows. Very useful for presentations/demos.
@@ -86,7 +86,7 @@ Use it with ==C-M-+/-==.
   (default-text-scale-mode)
 
 #+END_SRC
-  
+
 ** Resize Windows
 
 Use it with ==M-x windresize==. Afterwards you can use the cursor to
@@ -105,5 +105,3 @@ resize the window.
   (use-package transpose-frame)
 
 #+END_SRC
-
-
