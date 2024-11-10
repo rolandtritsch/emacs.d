@@ -7,9 +7,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(package-selected-packages
- ;; '(vterm org-download gptel mastodon-alt org-roam editorconfig python-isort transpose-frame lsp-pylsp elpy mastodon ement gitter code-review facemenu-menu facemenu yafolding sudoku forge company windresize lsp-metals default-text-scale elixir-mode lsp-haskell light-blue-theme solarized-theme edit-indirect mermaid-mode projectile-elixir treemacs-magit treemacs-icons-dired treemacs-projectile treemacs inf-elixir inf-elixr yasnippet-snippets yasnippet elisp-format elsip-format exunit lorem-ipsum gotest htmlize ox-reveal go-mode zenburn-theme yaml-mode which-key use-package ubuntu-theme scala-mode sbt-mode protobuf-mode org-bullets org-beautify-theme org monochrome-theme minimal-theme markdown-toc magit lsp-ui leuven-theme kosmos-theme json-mode intero flycheck-plantuml disable-mouse company-lsp basic-theme autumn-light-theme arjen-grey-theme apropospriate-theme anti-zenburn-theme alchemist afternoon-theme ace-window abyss-theme))
- )
+ '(package-selected-packages
+   '(python-isort elpy lsp-metals sbt-mode scala-mode elisp-format editorconfig lsp-ui lsp-mode yaml-mode windresize which-key vterm transpose-frame ox-reveal org-roam org-download markdown-toc lorem-ipsum json-mode htmlize gptel forge flycheck disable-mouse default-text-scale counsel company ace-window)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
