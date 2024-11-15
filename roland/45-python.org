@@ -3,7 +3,6 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package elpy
-    :ensure t
     :config
     (setq python-check-command "flake8 --color=never")
     :custom
@@ -12,7 +11,6 @@
     (elpy-enable))
 
   (use-package python-isort
-    :ensure t
     :after (elpy)
     :hook
     (python-mode . 'python-isort-on-save-mode))

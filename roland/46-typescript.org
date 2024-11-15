@@ -5,7 +5,6 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package typescript-mode
-    :ensure t
     :config
     (setq typescript-indent-level 2)
     (setq js-indent-level 2)
@@ -28,7 +27,6 @@ Make sure we can find the linter.
 #+BEGIN_SRC emacs-lisp
 
   (use-package add-node-modules-path
-    :ensure t
     :hook (
       (typescript-mode . add-node-modules-path)
       )
@@ -45,7 +43,6 @@ Make sure we can find the linter.
 #+BEGIN_SRC emacs-lisp
 
   (use-package tide
-    :ensure t
     :after (typescript-mode company flycheck)
     :preface
     (defun flycheck-set-checker()
