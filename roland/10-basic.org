@@ -43,6 +43,9 @@ Basically configuring emacs itself.
   (setq split-width-threshold 80)
   (setq split-height-threshold nil)
 
+  (setq display-buffer-reuse-frames nil) ; don't create new frames
+  (setq display-buffer-reuse-window .t)   ; reuse existing windows
+
   ;; (global-set-key (kbd "C-x !") 'rename-buffer)
 
 #+END_SRC
