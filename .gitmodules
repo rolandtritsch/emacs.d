@@ -28,3 +28,6 @@
 [submodule "packages/codeium.el"]
 	path = packages/codeium.el
 	url = https://github.com/Exafunction/codeium.el.git
+[submodule "packages/supermaven.el"]
+	path = packages/supermaven.el
+	url = https://github.com/crazywolf132/supermaven.el.git

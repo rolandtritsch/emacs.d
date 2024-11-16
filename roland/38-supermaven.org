@@ -1,0 +1,25 @@
+* Configure support for Supermaven
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package supermaven
+    :load-path "packages/supermaven.el/"
+    :hook (prog-mode . supermaven-mode)
+    ;; :bind (
+    ;;   :map prog-mode-map
+    ;;   ("C-z s a" . supermaven-accept-suggestion)
+    ;;   ("C-z s c" . supermaven-clear-suggestion)
+    ;;   ("C-z s n" . supermaven-accept-word)
+    ;;   )
+    :config
+    (setq supermaven-ignore-filetypes '("org" "txt"))
+    (setq supermaven-disable-inline-completion nil)
+    ;; (setq supermaven-activate-url "https://supermaven.com/auth?code=f4f30142-c33a-4d34-b9cb-aaaab722de15")
+    (setq supermaven-log-level 'debug)
+    (setq supermaven-keymaps
+      '((accept-suggestion . "C-z s a")
+        (clear-suggestion . "C-z s c")
+        (accept-word . "C-z s n")))
+    )
+
+#+END_SRC
