@@ -140,6 +140,16 @@ Make git/magit work.
     ;; (magit-wip-mode t)
     (magit-no-confirm (quote (safe-with-wip)))
     (magit-define-global-key-bindings nil)
+    ;; (magit-display-buffer-noselect t)
+    ;; Options are:
+    ;;   magit-display-buffer-traditional,
+    ;;   magit-display-buffer-same-window-except-diff-v1,
+    ;;   magit-display-buffer-fullframe-status-v1,
+    ;;   magit-display-buffer-fullframe-status-topleft-v1,
+    ;;   magit-display-buffer-fullcolumn-most-v1,
+    ;;   display-buffer,
+    ;;   ignore
+    (magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
     )
 
 #+END_SRC

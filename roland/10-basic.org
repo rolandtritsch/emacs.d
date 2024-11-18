@@ -60,7 +60,9 @@ Basically configuring emacs itself.
   ;;   ("CAPTURE-.*" (display-buffer-in-direction) (direction . left) (window-height . 10)))
   ;;   ))
   (add-to-list 'display-buffer-alist
-    '("CAPTURE-.*" (display-buffer-in-direction) (direction . right) (window-height . 10))
+    '("\\*Org Agenda\\*" (display-buffer-full-frame))
+    '("CAPTURE-.*" (display-buffer-in-direction) (direction . right))
+    ;; '("magit.*" (display-buffer-in-direction) (direction . right))
     )
 
   ;; (global-set-key (kbd "C-x !") 'rename-buffer)
