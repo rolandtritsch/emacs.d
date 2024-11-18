@@ -40,12 +40,28 @@ Basically configuring emacs itself.
   (global-display-line-numbers-mode 0)
   (global-hl-line-mode 0)
 
-  (setq split-width-threshold 80)
+  (setq split-width-threshold nil)
   (setq split-height-threshold nil)
 
-  ;; (setq display-buffer-reuse-frames t)
-  ;; (setq display-buffer-reuse-window t)
-  ;; (setq pop-up-frames nil)
+  (setq display-buffer-reuse-frames nil)
+  (setq display-buffer-reuse-window nil)
+
+  ;; Options are: display-buffer-same-window, display-buffer-reuse-window,
+  ;; display-buffer-reuse-mode-window, display-buffer-pop-up-window,
+  ;; display-buffer-in-previous-window, display-buffer-use-some-window,
+  ;; display-buffer-use-least-recent-window,
+  ;; display-buffer-in-direction, display-buffer-below-selected,
+  ;; display-buffer-at-bottom, display-buffer-pop-up-frame,
+  ;; display-buffer-full-frame, display-buffer-in-child-frame,
+  ;; display-buffer-use-some-frame, display-buffer-no-window
+  ;; (display-buffer "xtest" '(display-buffer-at-bottom (window-height . 15)))
+  ;; (setq display-buffer-alist nil)
+  ;; (setq display-buffer-alist '(
+  ;;   ("CAPTURE-.*" (display-buffer-in-direction) (direction . left) (window-height . 10)))
+  ;;   ))
+  (add-to-list 'display-buffer-alist
+    '("CAPTURE-.*" (display-buffer-in-direction) (direction . right) (window-height . 10))
+    )
 
   ;; (global-set-key (kbd "C-x !") 'rename-buffer)
 
@@ -68,6 +84,8 @@ Basically configuring emacs itself.
 ** Switch on winner-mode (to go back (and forth) through the window layout history).
 
 Use it with ==M-x winner-undo/-redo==.
+
+Note: **NOT** using this right now.
 
 #+BEGIN_SRC emacs-lisp
 
