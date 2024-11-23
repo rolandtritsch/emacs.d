@@ -59,11 +59,10 @@ Basically configuring emacs itself.
   ;; (setq display-buffer-alist '(
   ;;   ("CAPTURE-.*" (display-buffer-in-direction) (direction . left) (window-height . 10)))
   ;;   ))
-  (add-to-list 'display-buffer-alist
-    '("\\*Org Agenda\\*" (display-buffer-full-frame))
-    '("CAPTURE-.*" (display-buffer-in-direction) (direction . right))
-    ;; '("magit.*" (display-buffer-in-direction) (direction . right))
-    )
+  (add-to-list 'display-buffer-alist '("\\*Org Agenda\\*" (display-buffer-full-frame)))
+  (add-to-list 'display-buffer-alist '("CAPTURE-.*" (display-buffer-full-frame)))
+  (add-to-list 'display-buffer-alist '("gptel-.*" (display-buffer-in-direction) (direction . left)))
+  (add-to-list 'display-buffer-alist '("vt-.*" (display-buffer-full-frame)))
 
   ;; (global-set-key (kbd "C-x !") 'rename-buffer)
 
