@@ -201,7 +201,21 @@ Make git/magit work.
 *Note:* You need to =sudo apt install libtool-bin libvterm-dev=.
 
 #+BEGIN_SRC emacs-lisp
+
   (use-package vterm
-    )
+  )
+
+#+END_SRC
+
+** Editor Config
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1)
+  )
+
 #+END_SRC
 
