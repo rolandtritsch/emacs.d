@@ -8,7 +8,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(python-isort elpy lsp-metals sbt-mode scala-mode elisp-format editorconfig lsp-ui lsp-mode yaml-mode windresize which-key vterm transpose-frame ox-reveal org-roam org-download markdown-toc lorem-ipsum json-mode htmlize gptel forge flycheck disable-mouse default-text-scale counsel company ace-window)))
+    '(mermaid-mode python-isort elpy lsp-metals sbt-mode scala-mode elisp-format editorconfig lsp-ui lsp-mode yaml-mode windresize which-key vterm transpose-frame ox-reveal org-roam org-download markdown-toc lorem-ipsum json-mode htmlize gptel forge flycheck disable-mouse default-text-scale counsel company ace-window)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

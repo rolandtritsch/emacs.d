@@ -1,0 +1,31 @@
+* Install/configure UML support (using mermaid)
+
+Allows to work with mermaid diagrams.
+
+*Note*: You need to manually install the =mermaid-cli= file (see below).
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package mermaid-mode
+    :load-path "packages/mermaid-mode/"
+    :config
+    (setq mermaid-mode-map
+          (let ((map mermaid-mode-map))
+            (define-key map (kbd "C-c C-c") nil)
+            (define-key map (kbd "C-c C-f") nil)
+            (define-key map (kbd "C-c C-b") nil)
+            (define-key map (kbd "C-c C-r") nil)
+            (define-key map (kbd "C-c C-o") nil)
+            (define-key map (kbd "C-c C-d") nil)
+            (define-key map (kbd "C-z d c") 'mermaid-compile)
+            (define-key map (kbd "C-z d f") 'mermaid-compile-file)
+            (define-key map (kbd "C-z d b") 'mermaid-compile-buffer)
+            (define-key map (kbd "C-z d r") 'mermaid-compile-region)
+            (define-key map (kbd "C-z d o") 'mermaid-open-browser)
+            (define-key map (kbd "C-z d d") 'mermaid-open-doc)
+            map
+            )
+          )
+    )
+
+#+END_SRC
