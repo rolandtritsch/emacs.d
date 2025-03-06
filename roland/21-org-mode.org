@@ -69,7 +69,7 @@
 
 #+BEGIN_SRC emacs-lisp
 
-   (use-package org-roam
+  (use-package org-roam
     ;; :bind-keymap ("C-z r" . org-roam-mode-map)
     :bind (
            :map org-roam-mode-map
@@ -78,23 +78,23 @@
            ("C-z o r n f" . 'org-roam-node-find)
            ;; ("C-z o r n i" . 'org-roam-node-insert)
            )
-     :custom
-     (org-roam-directory "~/Dropbox/Notes/Roam")
-     (org-roam-dailies-directory "./Daily")
-     (org-roam-mode-sections (list
-       'org-roam-backlinks-section
-       'org-roam-reflinks-section
-       'org-roam-unlinked-references-section
-       ))
-     (org-roam-capture-templates '(
-       ("d" "default" plain "\n- %?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n") :unnarrowed t)
-       ("t" "thought" plain "\n- %?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :thought:\n") :unnarrowed t)
-       ("b" "book" plain "\n* Source\n\n- Author: %^{Author}\n- Title: ${title}\n- Year: %^{Year}\n\n* Summary\n\n- %?" :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :book:\n") :unnarrowed t)
-       ("m" "meeting" plain "\n- Who: %^{Who}\n- What: ${What}\n- When: %^{When}\n- Where: %^{Where}\n\n* Exec Summary\n\n- ???\n- ???\n- ???\n\n* Action Items (Who/What/By when)\n\n- ???\n- ???\n- ???\n\n* Notes\n\n- %?" :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :meeting-notes:\n") :unnarrowed t)
-       ))
-     :config
-     (org-roam-db-autosync-mode)
-     )
+    :custom
+    (org-roam-directory "~/Dropbox/Notes/Roam")
+    (org-roam-dailies-directory "./Daily")
+    (org-roam-mode-sections (list
+                             'org-roam-backlinks-section
+                             'org-roam-reflinks-section
+                             'org-roam-unlinked-references-section
+                             ))
+    (org-roam-capture-templates '(
+                                  ("d" "default" plain "\n- %?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n") :unnarrowed t)
+                                  ("t" "thought" plain "\n- %?" :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :thought:\n") :unnarrowed t)
+                                  ("b" "book" plain "\n* Source\n\n- Author: %^{Author}\n- Title: ${title}\n- Year: %^{Year}\n\n* Summary\n\n- %?" :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :book:\n") :unnarrowed t)
+                                  ("m" "meeting" plain "\n- Who: %^{Who}\n- What: ${What}\n- When: %^{When}\n- Where: %^{Where}\n\n* Exec Summary\n\n- ???\n- ???\n- ???\n\n* Action Items (Who/What/By when)\n\n- ???\n- ???\n- ???\n\n* Notes\n\n- %?" :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+date: %U\n#+filetags: :meeting-notes:\n") :unnarrowed t)
+                                  ))
+    :config
+    (org-roam-db-autosync-mode)
+    )
 
 #+END_SRC
 
@@ -142,7 +142,7 @@ Note: You need to download/install the [[https://ditaa.sourceforge.net/][ditaa]]
   ;; (setq org-ditaa-jar-path "~/.local/bin/ditaa0_9.jar")
 
 #+END_SRC
-
+ 
 ** Download
 
 Allows to paste images into an org-mode buffer.
@@ -152,6 +152,30 @@ Allows to paste images into an org-mode buffer.
   (use-package org-download
     :config
     (setq-default org-download-image-dir "./Images")
+    )
+
+#+END_SRC
+ 
+** Org-Mindmap
+
+Allows to visualize org-mode files as mindmaps.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package org-mind-map
+    :init
+    (require 'ox-org)
+    :ensure t
+    ;; Uncomment the below if 'ensure-system-packages` is installed
+    ;;:ensure-system-package (gvgen . graphviz)
+    :config
+    (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+    ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+    ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+    ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+    ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+    ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+    ;; (setq org-mind-map-engine "circo")  ; Circular Layout
     )
 
 #+END_SRC
