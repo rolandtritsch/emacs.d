@@ -8,41 +8,22 @@
            ("C-z g <RET>" . gptel-send)
            )
     :config
-    (gptel-make-gpt4all "GPT4All:llama-3.1"
+    (setq gptel-model 'claude-3-7-sonnet-20250219)
+    (setq gptel-backend (gptel-make-anthropic "Claude"
+                          :stream t
+                          :key (lambda ("~/.claude-gptel.key") (with-temp-buffer
+                                                           (insert-file-contents file-path)
+                                                           (buffer-string)
+                                                           ))
+                          ))
+    (gptel-make-ollama "Ollama"
+      :host "localhost:11434"
       :stream t
-      :protocol "http"
-      :host "localhost:4891"
-      :models '("Meta-Llama-3.1-8B-Instruct-128k-Q4_0.gguf")
-      )
-    (gptel-make-gpt4all "GPT4All:codeqwen-1.5"
-      :stream t
-      :protocol "http"
-      :host "localhost:4891"
-      :models '("codeqwen-1_5-7b-chat-q4_0.gguf")
-      )
-    (gptel-make-openai "llamafile:llava-v1.5-7b-q4"
-      :stream t
-      :protocol "http"
-      :host "localhost:8091"
-      :models '("test")
-      )
-    (gptel-make-openai "llamafile:wizardcoder-python-34b-v1.0.Q5_K_M"
-      :stream t
-      :protocol "http"
-      :host "localhost:8092"
-      :models '("test")
-      )
-    (gptel-make-openai "llamafile:Meta-Llama-3-70B-Instruct.Q4_0"
-      :stream t
-      :protocol "http"
-      :host "localhost:8093"
-      :models '("test")
-      )
-    (gptel-make-openai "llamafile:Meta-Llama-3-8B-Instruct.Q5_K_M"
-      :stream t
-      :protocol "http"
-      :host "localhost:8094"
-      :models '("test")
+      :models '(
+                llama3.2:latest
+                qwen2.5-coder:1.5b
+                deepseek-r1:1.5b
+                )
       )
     (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
     (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
