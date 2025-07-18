@@ -1,0 +1,13 @@
+* Configure support for Aider(Macs)
+
+Note: You (obviously) need to install [[https://aider.chat/][Aider]] first. And then create a =~/.aider.conf.yml= (that will also contain all your api keys).
+
+Note: If you want to use AWS bedrock models you need to have the AWS env vars configured.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package aidermacs
+    :bind (("C-z a" . aidermacs-transient-menu))
+    )
+
+#+END_SRC
