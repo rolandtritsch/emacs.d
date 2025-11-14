@@ -8,7 +8,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-    '(aidermacs org-mind-map mermaid-mode python-isort elpy lsp-metals sbt-mode scala-mode elisp-format editorconfig lsp-ui lsp-mode yaml-mode windresize which-key vterm transpose-frame ox-reveal org-roam org-download markdown-toc lorem-ipsum json-mode htmlize gptel forge flycheck disable-mouse default-text-scale counsel company ace-window)))
+    '(add-node-modules-path aidermacs claude-code-ide company counsel default-text-scale disable-mouse
+       editorconfig elisp-format forge gptel htmlize json-mode lorem-ipsum lsp-metals lsp-ui
+       markdown-toc org-download org-mind-map org-roam ox-reveal sbt-mode tide transpose-frame
+       typescript-mode vterm which-key windresize yaml-mode))
+ '(package-vc-selected-packages
+    '((claude-code-ide :url "https://github.com/manzaltu/claude-code-ide.el"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
