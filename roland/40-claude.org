@@ -6,7 +6,7 @@ Note: You (obviously) need to install the claude-code first.
 
   (use-package claude-code-ide
     :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
-    :bind ("C-z c" . claude-code-ide-menu)
+    :bind ("C-z c c" . claude-code-ide-menu)
   )
 
 #+END_SRC
