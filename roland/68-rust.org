@@ -1,0 +1,13 @@
+* Install/configure rust
+
+Note: To (also) make LSP work, you (obviously also) need to run =rustup component add rust-analyzer=.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package rust-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+  (setq rust-format-on-save t)
+  )
+
+#+END_SRC

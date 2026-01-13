@@ -44,4 +44,13 @@
     (setq lsp-ui-doc-show-with-mouse nil)
     )
 
+  ;; Fix rust-analyzer cargo.cfgs configuration
+  ;; Also run/install 'rustup component add clippy'
+  ;; (with-eval-after-load 'lsp-rust
+  ;;   (setq lsp-rust-analyzer-cargo-watch-enable t)
+  ;;   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
+  ;;   ;; Explicitly set cargo-cfgs as an empty vector to avoid type confusion
+  ;;   (setq lsp-rust-analyzer-cargo-cfgs [])
+  ;;   (setq lsp-rust-analyzer-cargo-override-command nil))
+
 #+END_SRC

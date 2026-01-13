@@ -52,8 +52,9 @@ Not a lot is happening here. Just loading a bunch of other org-files.
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/62-scala.org"))
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/63-elixir.org"))
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/64-go.org"))
-  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/65-python.org"))
-  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/66-typescript.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/65-python.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/66-typescript.org"))
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/67-snowflake.org"))
+  ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/68-rust.org"))
 
 #+END_SRC

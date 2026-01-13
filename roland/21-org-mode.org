@@ -5,6 +5,7 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package org
+    :ensure t
     ;; :bind-keymap ("C-z o" . org-mode-map)
     :bind (
            :map org-mode-map
