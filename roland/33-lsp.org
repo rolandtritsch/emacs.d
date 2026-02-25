@@ -8,7 +8,10 @@
     :hook (
             (before-save . lsp-format-buffer)
             (before-save . lsp-organize-imports)
-            (prog-mode . lsp)
+            (prog-mode . (lambda ()
+                           (unless (derived-mode-p 'makefile-mode
+                                                   'makefile-gmake-mode)
+                             (lsp))))
       )
     :commands (lsp lsp-defered)
     :config
@@ -20,7 +23,7 @@
     (setq lsp-enable-on-type-formatting t)
     (setq lsp-enable-which-key-integration t)
     (setq lsp-enable-xref t)
-    (setq lsp-headerline-breadcrumb-enable nil)  
+    (setq lsp-headerline-breadcrumb-enable nil)
     (setq lsp-modeline-code-actions-enable t)
     (setq lsp-modeline-code-actions-segments '(count icon name))
     (setq lsp-modeline-diagnostics-enable t)
