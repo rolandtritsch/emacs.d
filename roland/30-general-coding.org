@@ -5,7 +5,23 @@
 #+BEGIN_SRC emacs-lisp
 
   ;; (use-package protobuf-mode)
-  (use-package json-mode)
+  (use-package json-mode
+    :preface
+    (defun roland/json-sort-keys ()
+      "Sort JSON keys using jq. Silently skips if jq is not found or JSON is invalid."
+      (let* ((output-buffer (generate-new-buffer " *json-sort*"))
+             (exit-code (call-process-region (point-min) (point-max)
+                                             "jq" nil output-buffer nil
+                                             "--sort-keys" ".")))
+        (if (= exit-code 0)
+            (let ((pos (point)))
+              (replace-buffer-contents output-buffer)
+              (goto-char (min pos (point-max))))
+          (message "json-sort: skipped (jq error or invalid JSON)"))
+        (kill-buffer output-buffer)))
+    :hook
+    (json-mode . (lambda ()
+                   (add-hook 'before-save-hook #'roland/json-sort-keys nil t))))
   (use-package yaml-mode)
   (use-package markdown-mode)
   (use-package markdown-toc)
