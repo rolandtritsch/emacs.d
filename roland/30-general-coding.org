@@ -29,10 +29,14 @@
   (use-package markdown-toc)
   (use-package markdown-preview-mode
     :config
+    (setq markdown-preview-stylesheets
+          (list "https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css"
+                "data:text/css,body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px;}"))
     (setq markdown-preview-javascript
           (list "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"))
     (setq markdown-preview-script-onupdate
-          "document.querySelectorAll('code.language-mermaid').forEach(function(el) {
+          "document.body.className='markdown-body';
+           document.querySelectorAll('code.language-mermaid').forEach(function(el) {
              var div = document.createElement('div');
              div.className = 'mermaid';
              div.textContent = el.textContent;
