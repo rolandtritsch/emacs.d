@@ -25,13 +25,20 @@
   (use-package yaml-mode)
   (use-package markdown-mode
     :config
-    (setq markdown-command "marked"))
+    (setq markdown-command "/home/yoda/.asdf/shims/marked"))
   (use-package markdown-toc)
   (use-package markdown-preview-mode
     :config
     (setq markdown-preview-javascript
-          (list "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
-                (expand-file-name "~/.emacs.d/scripts/mermaid-init.js"))))
+          (list "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"))
+    (setq markdown-preview-script-onupdate
+          "document.querySelectorAll('code.language-mermaid').forEach(function(el) {
+             var div = document.createElement('div');
+             div.className = 'mermaid';
+             div.textContent = el.textContent;
+             el.parentNode.replaceWith(div);
+           });
+           mermaid.run();"))
   ;; (use-package edit-indirect)
   ;; (use-package makefile-executor
   ;;   :config
