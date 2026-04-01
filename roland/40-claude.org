@@ -7,6 +7,12 @@ Note: You (obviously) need to install the claude-code first.
   (use-package claude-code-ide
     :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
     :bind ("C-z c c" . claude-code-ide-menu)
-  )
+    :config
+    (defun my/claude-ask-window-side (&rest _)
+      "Ask for window split direction before starting a Claude session."
+      (let ((choice (read-char-choice "Claude window: (h)orizontal or (v)ertical? " '(?h ?v))))
+        (setq claude-code-ide-window-side
+              (if (eq choice ?h) 'bottom 'right))))
+    (advice-add 'claude-code-ide--start-session :before #'my/claude-ask-window-side))
 
 #+END_SRC
