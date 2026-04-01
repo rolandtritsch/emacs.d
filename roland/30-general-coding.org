@@ -31,7 +31,7 @@
     :config
     (setq markdown-preview-javascript
           (list "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
-                "data:text/javascript,mermaid.initialize({startOnLoad:true,look:'handDrawn'});")))
+                (expand-file-name "~/.emacs.d/scripts/mermaid-init.js"))))
   ;; (use-package edit-indirect)
   ;; (use-package makefile-executor
   ;;   :config
