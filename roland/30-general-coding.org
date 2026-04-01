@@ -23,13 +23,15 @@
     (json-mode . (lambda ()
                    (add-hook 'before-save-hook #'roland/json-sort-keys nil t))))
   (use-package yaml-mode)
-  (use-package markdown-mode)
+  (use-package markdown-mode
+    :config
+    (setq markdown-command "marked"))
   (use-package markdown-toc)
   (use-package markdown-preview-mode
     :config
     (setq markdown-preview-javascript
           (list "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
-                "data:text/javascript,mermaid.initialize({startOnLoad:true});")))
+                "data:text/javascript,mermaid.initialize({startOnLoad:true,look:'handDrawn'});")))
   ;; (use-package edit-indirect)
   ;; (use-package makefile-executor
   ;;   :config
