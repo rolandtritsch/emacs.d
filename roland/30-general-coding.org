@@ -25,6 +25,9 @@
   (use-package yaml-mode)
   (use-package markdown-mode)
   (use-package markdown-toc)
+  (use-package grip-mode
+    :config
+    (setq grip-real-time-refresh t))
   ;; (use-package edit-indirect)
   ;; (use-package makefile-executor
   ;;   :config
