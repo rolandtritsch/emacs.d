@@ -61,17 +61,17 @@ Allows you to insert ramdom text in the buffer. Use it with ==M-x lorem-*==.
 
 #+BEGIN_SRC emacs-lisp
 
-  ;; (use-package solarized-theme
-  ;;   :config
-  ;;   (load-theme 'solarized-light t)
-  ;; )
+  (use-package solarized-theme
+    :config
+    (load-theme 'solarized-light t)
+  )
 
   ;; (use-package zenburn-theme
   ;;   :config
   ;;   (load-theme 'zenburn-light t)
   ;; )
 
-  (load-theme 'tango t)
+  ;; (load-theme 'tango t)
 
 #+END_SRC
 
