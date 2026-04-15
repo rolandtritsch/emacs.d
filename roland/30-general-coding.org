@@ -237,6 +237,10 @@ Make git/magit work.
 #+BEGIN_SRC emacs-lisp
 
   (use-package vterm
+    :custom-face
+    ;; ANSI color 0 (black) defaults to near-invisible on solarized-light background.
+    ;; Use base01 (#586e75) for foreground and base00 (#657b83) for bright variant.
+    (vterm-color-black ((t (:foreground "#586e75" :background "#657b83"))))
   )
 
 #+END_SRC
