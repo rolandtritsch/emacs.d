@@ -5,7 +5,7 @@ Note: You (obviously) need to install [[https://developers.openai.com/codex/cli]
 #+BEGIN_SRC emacs-lisp
 
   (use-package codex
-    :vc (:url "https://github.com/benthamite/codex")
+    :vc (:url "https://github.com/rolandtritsch/codex")
     :bind-keymap ("C-z c x" . codex-command-map)
     :config
     (codex-mode 1)
