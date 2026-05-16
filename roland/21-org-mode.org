@@ -62,8 +62,6 @@
     (use-package htmlize)
     )
 
-  (org-reload)
-
 #+END_SRC
 
 ** Org-Roam

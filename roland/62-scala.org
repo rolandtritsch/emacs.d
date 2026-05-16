@@ -32,6 +32,8 @@
     (use-package lsp-metals)
 
     (use-package scala-cli-repl
+      :ensure nil
+      :straight nil
       :load-path "packages/scala-cli-repl/"
       :config
       ;; (setq scala-cli-repl-program-args '("--power" "--amm"))

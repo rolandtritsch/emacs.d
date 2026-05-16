@@ -23,6 +23,8 @@ Bootstrap straight.el and install/configure =use-package=.
           use-package-always-ensure nil
           use-package-expand-minimally t))
 
+  (straight-use-package 'org)
+  (straight-use-package 'transient)
   (straight-use-package 'use-package)
   (require 'use-package)
 
