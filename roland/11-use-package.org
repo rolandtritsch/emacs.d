@@ -1,19 +1,8 @@
 * Install/configure package manager
 
-Configure package. Install/configure =use-package=.
-
-Based on this [[https://ianyepan.github.io/posts/setting-up-use-package/][tutorial]].
+Bootstrap straight.el and install/configure =use-package=.
 
 #+BEGIN_SRC emacs-lisp
-
-  (require 'package)
-
-  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
-  (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-  (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
-  (package-initialize)
 
   (defvar bootstrap-version)
   (let ((bootstrap-file
@@ -29,14 +18,10 @@ Based on this [[https://ianyepan.github.io/posts/setting-up-use-package/][tutori
         (eval-print-last-sexp)))
     (load bootstrap-file nil 'nomessage))
 
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-
   (eval-and-compile
-    (setq use-package-always-ensure t
-          use-package-expand-minimally t
-          package-archive-priorities '(("melpa" . 1))))
+    (setq straight-use-package-by-default t
+          use-package-always-ensure nil
+          use-package-expand-minimally t))
 
   (straight-use-package 'use-package)
   (require 'use-package)
