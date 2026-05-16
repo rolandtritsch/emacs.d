@@ -40,6 +40,7 @@ Not a lot is happening here. Just loading a bunch of other org-files.
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/38-supermaven.org"))
   ;; (org-babel-load-file (expand-file-name "~/.emacs.d/roland/39-aider.org"))
   (org-babel-load-file (expand-file-name "~/.emacs.d/roland/40-claude.org"))
+  (org-babel-load-file (expand-file-name "~/.emacs.d/roland/41-codex.org"))
 
 #+END_SRC
 

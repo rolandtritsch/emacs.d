@@ -1,0 +1,14 @@
+* Configure support for Codex
+
+Note: You (obviously) need to install [[https://developers.openai.com/codex/cli][codex]] first.
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package codex
+    :vc (:url "https://github.com/benthamite/codex")
+    :bind-keymap ("C-z c x" . codex-command-map)
+    :config
+    (codex-mode 1)
+    (setq codex-terminal-backend 'vterm))
+
+#+END_SRC
