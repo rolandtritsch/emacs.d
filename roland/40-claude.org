@@ -5,7 +5,7 @@ Note: You (obviously) need to install the claude-code first.
 #+BEGIN_SRC emacs-lisp
 
   (use-package claude-code-ide
-    :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
+    :straight (:host github :repo "manzaltu/claude-code-ide.el")
     :bind ("C-z c c" . claude-code-ide-menu)
     :config
     (defun my/claude-ask-window-side (&rest _)
