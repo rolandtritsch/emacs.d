@@ -9,9 +9,6 @@ Note: You (obviously) need to install [[https://developers.openai.com/codex/cli]
     :straight (:host github :repo "rolandtritsch/codex")
     :demand t
     :bind-keymap ("C-z c x" . codex-command-map)
-    :init
-    (straight-pull-package 'codex)
-    (straight-rebuild-package "codex")
     :config
     (codex-mode 1)
     (setq codex-terminal-backend 'vterm))
