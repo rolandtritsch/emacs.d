@@ -31,3 +31,4 @@ session.*
 tramp
 transient/
 url/cache/
+lisp/

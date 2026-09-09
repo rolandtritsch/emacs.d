@@ -14,7 +14,8 @@ Basically configuring emacs itself.
   (setq inhibit-startup-screen t)
   (setq line-number-mode t)
   (setq column-number-mode t)
-  (set-frame-font "sourcecodepro 14" nil t)
+  (add-to-list 'default-frame-alist '(font . "sourcecodepro 14"))
+  (set-face-attribute 'default nil :font "sourcecodepro 14")
 
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
