@@ -29,7 +29,17 @@
         (scala-mode . lsp-deferred)
     )
 
-    (use-package lsp-metals)
+    (use-package lsp-metals
+      :config
+      ;; Metals 2 sends sync UI notifications that lsp-metals does not handle yet.
+      ;; https://github.com/emacs-lsp/lsp-metals/issues/122
+      (let ((handlers
+             (lsp--client-notification-handlers
+              (gethash 'metals lsp-clients))))
+        (dolist (method '("metals/syncStatus" "metals/syncModes"))
+          (unless (gethash method handlers)
+            (puthash method #'ignore handlers))))
+    )
 
     (use-package scala-cli-repl
       :ensure nil
